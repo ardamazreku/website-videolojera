@@ -578,7 +578,6 @@
                 <span class="nk-post-categories">
                     <span class="bg-main-4">MMO</span>
                 </span>
-                
             </a>
         </div>
         <div class="col-lg-9 col-md-7">
