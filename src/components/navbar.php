@@ -1,0 +1,130 @@
+<header class="nk-header nk-header-opaque">
+<!-- START: Top Contacts -->
+<div class="nk-contacts-top">
+    <div class="container">
+        <div class="nk-contacts-right">
+            <ul class="nk-contacts-icons">
+
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#modalSearch">
+                        <span class="fa fa-search"></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#modalLogin">
+                        <span class="fa fa-user"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END: Top Contacts -->
+
+<!--
+START: Navbar
+
+Additional Classes:
+.nk-navbar-sticky
+.nk-navbar-transparent
+.nk-navbar-autohide
+-->
+    <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
+        <div class="container">
+            <div class="nk-nav-table">
+                <a href="index.php" class="nk-nav-logo">
+                    <img src="src/assets/images/logo.png" alt="SteCord" width="90">
+                </a>
+            <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
+                    <li class=" nk-drop-item">
+                        <a href="elements.php"> Features </a>
+                <ul class="dropdown">
+                    <li class=" nk-drop-item">
+                        <a href="forum.php"> Forum </a>
+                            <ul class="dropdown">
+                                <li>
+                                    <a href="forum.php"> Forum </a>
+                                </li>
+                                <li>
+                                    <a href="forum-topics.php"> Topics </a>
+                                </li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="coming-soon.php"> Coming Soon </a>
+                    </li>
+                </ul>
+                    </li>
+                    <li class=" nk-drop-item">
+                        <a href="blog-list.php"> Blog </a>
+                <ul class="dropdown">
+                    <li class=" nk-drop-item">
+                        <a href="blog-grid.php"> Blog With Sidebar </a>
+                            <ul class="dropdown">
+                                <li>
+                                    <a href="blog-grid.php"> Blog Grid </a>
+                                </li>
+                                <li>
+                                    <a href="blog-list.php"> Blog List </a>
+                                </li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="blog-fullwidth.php"> Blog Fullwidth </a>
+                    </li>
+                    <li>
+                        <a href="blog-article.php"> Blog Article </a>
+                    </li>
+                </ul>
+                    </li>
+                    <li>
+                        <a href="gallery.php"> Gallery </a>
+                    </li>
+                    <li>
+                        <a href="news.php"> News </a>
+                    </li>
+                    <li>
+                        <a href="store.php"> Store </a>
+                    </li>
+                </ul>
+                <ul class="nk-nav nk-nav-right nk-nav-icons">
+                    <li class="single-icon d-lg-none">
+                        <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                            <span class="nk-icon-burger">
+                                <span class="nk-t-1"></span>
+                                <span class="nk-t-2"></span>
+                                <span class="nk-t-3"></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END: Navbar -->
+</header>
+<!--
+    START: Navbar Mobile
+
+    Additional Classes:
+        .nk-navbar-left-side
+        .nk-navbar-right-side
+        .nk-navbar-lg
+        .nk-navbar-overlay-content
+-->
+<div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
+    <div class="nano">
+        <div class="nano-content">
+            <a href="index.php">
+                <img src="src/assets/images/logo.png" alt="" width="40">
+            </a>
+            <div class="nk-navbar-mobile-content">
+                <ul class="nk-nav">
+                    <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Navbar Mobile -->
