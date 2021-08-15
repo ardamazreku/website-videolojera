@@ -107,7 +107,7 @@
                     <img src="src/assets/images/icon-gamepad.png" alt="">
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">PS4</a></h3>
+                    <h3 class="nk-feature-title"><a href="#">PS & XBOX </a></h3>
                     <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
                 </div>
             </div>
@@ -115,10 +115,10 @@
         <div class="col-lg-4">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <img src="src/assets/images/icon-gamepad-2.png" alt="">
+                    <img src="src/assets/images/icon-nintendo.png" width="60%" alt="">
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">Xbox</a></h3>
+                    <h3 class="nk-feature-title"><a href="#"> NINTENDO </a></h3>
                     <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
                 </div>
             </div>
@@ -135,7 +135,6 @@
         <div class="nk-news-box-list">
             <div class="nano">
                 <div class="nano-content">
-                    
                     
                     <div class="nk-news-box-item nk-news-box-item-active">
                         <div class="nk-news-box-item-img">
@@ -154,7 +153,6 @@
                         <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
                         <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 18, 2018</div>
                     </div>
-                    
                     
                     <div class="nk-news-box-item">
                         <div class="nk-news-box-item-img">
