@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-include "database/connect.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,48 +46,23 @@ include "database/connect.php"
 
     <!-- START: Image Slider -->
     <div class="nk-image-slider" data-autoplay="8000">
+        <?php
+        require "database/connect.php";
+        $conn = $connect->prepare("SELECT * FROM lajmet");
+        $conn->execute();
+        $res = $conn->get_result();
 
+        while($row = $res->fetch_assoc()):
+        ?>
         <div class="nk-image-slider-item">
-            <img src="src/assets/images/slide-1.jpg" alt="" class="nk-image-slider-img" data-thumb="src/assets/images/slide-1.jpg">
+            <img src="<?= $row['foto']?>" alt="" class="nk-image-slider-img" data-thumb="<?= $row['foto']?>">
             <div class="nk-image-slider-content">
-                <h3 class="h4"> Black Ops Cold War </h3>
-                <p class="text-white">As the Zombie Outbreak grows, only the most fearless Operators will answer the call.
-                <br> A mountain of new Zombies content is coming to #BlackOpsColdWar this week. Get ready to climb! </p>
+                <h3 class="h4"><?= $row['titulli']?></h3>
+                <p class="text-white"><?= $row['permbajtja']?></p>
                 <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
             </div>
         </div>
-        
-        <div class="nk-image-slider-item">
-            <img src="src/assets/images/slide-2.jpg" alt="" class="nk-image-slider-img" data-thumb="src/assets/images/slide-2.jpg">
-            <div class="nk-image-slider-content">
-                    <h3 class="h4"> Assasin's Creed VALHALLA </h3>
-                    <p class="text-white"> The wait is over! 0 days left until kings and rats and castles alike. <br>
-                    The Siege of Paris launched on August 12th! </p>
-                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
-            </div>
-        </div>
-        
-        <div class="nk-image-slider-item">
-            <img src="src/assets/images/slide-3.jpg" alt="" class="nk-image-slider-img" data-thumb="src/assets/images/slide-3.jpg">
-        </div>
-        <div class="nk-image-slider-item">
-            <img src="src/assets/images/slide-4.jpg" alt="" class="nk-image-slider-img" data-thumb="src/assets/images/slide-4.jpg">
-            <div class="nk-image-slider-content">
-                    <h3 class="h4"> Forza Horizon 5's map is here! </h3>
-                    <p class="text-white">La Gran Caldera dominates the northwest quadrant of the map,
-                    and will probably loom large no matter where you are. It's going to be the jungle gym of the map,
-                    where freeroam players zip around to catch major air off of its rim & bumpy sides.</p>
-                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
-            </div>
-        </div>
-        
-        <div class="nk-image-slider-item">
-            <img src="src/assets/images/slide-5.jpg" alt="" class="nk-image-slider-img" data-thumb="src/assets/images/slide-5.jpg">
-            <div class="nk-image-slider-content">
-                    <h3 class="h4"> Four Of The Best PC Games Ever Are Free Right Now </h3>
-                    <p class="text-white">Ultima Underworlds 1 & 2, Syndicate, and Syndicate Wars are back—and until September 3, they’re free! </p>
-            </div>
-        </div>
+        <?php endwhile;?>
     </div>
     <!-- END: Image Slider -->
 
@@ -101,8 +75,7 @@ include "database/connect.php"
                     <img src="src/assets/images/icon-mouse.png" alt="">
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">PC</a></h3>
-                    <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
+                    <h3 class="nk-feature-title"><a href="store.php">PC</a></h3>
                 </div>
             </div>
         </div>
@@ -112,8 +85,7 @@ include "database/connect.php"
                     <img src="src/assets/images/icon-gamepad.png" alt="">
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">PS & XBOX </a></h3>
-                    <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
+                    <h3 class="nk-feature-title"><a href="store.php">PS & XBOX </a></h3>
                 </div>
             </div>
         </div>
@@ -123,8 +95,7 @@ include "database/connect.php"
                     <img src="src/assets/images/icon-nintendo.png" width="60%" alt="">
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#"> NINTENDO </a></h3>
-                    <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
+                    <h3 class="nk-feature-title"><a href="store.php"> NINTENDO </a></h3>
                 </div>
             </div>
         </div>
@@ -141,148 +112,55 @@ include "database/connect.php"
             <div class="nano">
                 <div class="nano-content">
                     <?php
+                        require "database/connect.php";
+                        $conn = $connect->prepare("SELECT * FROM lajmet");
+                        $conn->execute();
+                        $res = $conn->get_result();
 
-                    $titulli = $autori = $data = $permbajtja = $foto = ;
-
-                    $titulli = $_GET('$titulli');
-                    $autori = $_GET('autori');
-                    $data = $_GET('data');
-                    $permbajtja = $_GET 'permbajtja');
-                    $foto = $_GET('foto');
-
-                    ;?>
+                        while($row = $res->fetch_assoc()):
+                    ?>
                     <div class="nk-news-box-item nk-news-box-item-active">
                         <div class="nk-news-box-item-img">
-                            <img src="src/assets/images/post-1-sm.jpg" alt="Smell magic in the air. Or maybe barbecue">
+                            <img src="<?= $row['foto']?>" alt="">
                         </div>
-                        <img src="src/assets/images/post-1.jpg" alt="Smell magic in the air. Or maybe barbecue" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title"><?php echo'$titulli';?></h3>
-                        
+                        <img src="<?= $row['foto']?>" alt="" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title"><?=$row['titulli'] ?></h3>
+
                         <span class="nk-news-box-item-categories">
-                            <span class="bg-main-4">MMO</span>
+                            <span class="bg-main-5"><?=$row['kategoria']?></span>
                         </span>
-                        
+
                         <div class="nk-news-box-item-text">
-                            <p></p>
+                            <p><?=$row['permbajtja']?></p>
                         </div>
                         <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 18, 2018</div>
+                        <div class="nk-news-box-item-date">
+                            Written By: <?=$row['autori']?> &nbsp; &nbsp; &nbsp;
+                            <span class="fa fa-calendar"></span> &nbsp; <?=$row['data']?>
+                        </div>
                     </div>
-                    
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="src/assets/images/post-2-sm.jpg" alt="Grab your sword and fight the Horde">
-                        </div>
-                        <img src="src/assets/images/post-2.jpg" alt="Grab your sword and fight the Horde" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">Grab your sword and fight the Horde</h3>
-                        
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-1">Action</span>
-                        </span>
-                        
-                        <div class="nk-news-box-item-text">
-                            <p>For good, too; though, in consequence of my previous emotions, I was still occasionally seized with a stormy sob . After we had jogged on for some little time, I asked the carriersrc.</p>
-                        </div>
-                        <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 5, 2018</div>
-                    </div>
-                    
-                    
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="src/assets/images/post-3-sm.jpg" alt="We found a witch! May we burn her?">
-                        </div>
-                        <img src="src/assets/images/post-3.jpg" alt="We found a witch! May we burn her?" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">We found a witch! May we burn her?</h3>
-                        
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-2">Adventure</span>
-                        </span>
-                        
-                        <div class="nk-news-box-item-text">
-                            <p>And she went on planning to herself how she would manage it. `They must go by the carrier,' she thought; `and how funny it'll seem, sending presents to one's own feet!src.</p>
-                        </div>
-                        <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Aug 27, 2018</div>
-                    </div>
-                    
-                    
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="src/assets/images/post-4-sm.jpg" alt="For good, too though, in consequence">
-                        </div>
-                        <img src="src/assets/images/post-4.jpg" alt="For good, too though, in consequence" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">For good, too though, in consequence</h3>
-                        
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-3">Strategy</span>
-                        </span>
-                        
-                        <div class="nk-news-box-item-text">
-                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to thatsrc.</p>
-                        </div>
-                        <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Aug 14, 2018</div>
-                    </div>
-                    
-                    
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="src/assets/images/post-5-sm.jpg" alt="He made his passenger captain of one">
-                        </div>
-                        <img src="src/assets/images/post-5.jpg" alt="He made his passenger captain of one" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">He made his passenger captain of one</h3>
-                        
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-5">Indie</span>
-                        </span>
-                        
-                        <div class="nk-news-box-item-text">
-                            <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden doorsrc.</p>
-                        </div>
-                        <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
-                    </div>
-                    
-                    
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="src/assets/images/post-6-sm.jpg" alt="At first, for some time, I was not able to answer">
-                        </div>
-                        <img src="src/assets/images/post-6.jpg" alt="At first, for some time, I was not able to answer" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">At first, for some time, I was not able to answer</h3>
-                        
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-5">Racing</span>
-                        </span>
-                        
-                        <div class="nk-news-box-item-text">
-                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to thatsrc.</p>
-                        </div>
-                        <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                    </div>
-                    
+                    <?php endwhile;?>
                 </div>
             </div>
         </div>
+
         <div class="nk-news-box-each-info">
             <div class="nano">
                 <div class="nano-content">
                     <!-- There will be inserted info about selected news-->
-                    <div class="nk-news-box-item-image">
-                        <img src="src/assets/images/post-1.jpg" alt="">
+                    <div>
+                        <img alt="" class="nk-news-box-item-full-img">
                         <span class="nk-news-box-item-categories">
-                            <span class="bg-main-4">MMO</span>
+                            <span class="bg-main-5"></span>
                         </span>
                     </div>
-                    <h3 class="nk-news-box-item-title">Smell magic in the air. Or maybe barbecue</h3>
+                    <h3 class="nk-news-box-item-title"></h3>
                     <div class="nk-news-box-item-text">
-                        <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alonesrc.</p>
+                        <p></p>
                     </div>
                     <a href="blog-article.php" class="nk-news-box-item-more">Read More</a>
                     <div class="nk-news-box-item-date">
-                        <span class="fa fa-calendar"></span> Sep 18, 2018
+                        <span class="fa fa-calendar"></span>
                     </div>
                 </div>
             </div>

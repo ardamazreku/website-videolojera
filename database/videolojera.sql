@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Aug 15, 2021 at 04:44 PM
+-- Generation Time: Aug 15, 2021 at 07:00 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.21
 
@@ -94,23 +94,25 @@ CREATE TABLE IF NOT EXISTS `kontakt` (
 
 DROP TABLE IF EXISTS `lajmet`;
 CREATE TABLE IF NOT EXISTS `lajmet` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `roli` int(11) NOT NULL,
   `titulli` varchar(50) NOT NULL,
   `autori` varchar(50) NOT NULL,
   `data` date NOT NULL,
   `permbajtja` longtext NOT NULL,
   `foto` varchar(50) NOT NULL,
+  `kategoria` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `roli` (`roli`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lajmet`
 --
 
-INSERT INTO `lajmet` (`id`, `roli`, `titulli`, `autori`, `data`, `permbajtja`, `foto`) VALUES
-(1, 1, 'Smell magic in the air. Or maybe barbecue', 'Arda Mazreku', '2021-08-15', 'With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alonesrc.', 'src/assets/images/post-1-sm.jpg');
+INSERT INTO `lajmet` (`id`, `roli`, `titulli`, `autori`, `data`, `permbajtja`, `foto`, `kategoria`) VALUES
+(1, 1, 'BLACK OPS COLD WAR', 'Arda Mazreku', '2021-08-01', 'As the Zombie Outbreak grows, only the most fearless Operators will answer the call.\r\nA mountain of new Zombies content is coming to #BlackOpsColdWar this week. Get ready to climb!', 'src/assets/images/slide-1.jpg', 'FPS'),
+(2, 1, 'Assasin\'s Creed VALHALLA ', 'Arda Mazreku', '2021-08-03', 'The wait is over! 0 days left until kings and rats and castles alike. The Siege of Paris launched on August 12th! ', 'src/assets/images/slide-2.jpg', 'Single');
 
 -- --------------------------------------------------------
 
