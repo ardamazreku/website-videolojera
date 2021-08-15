@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+include "database/connect.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +74,7 @@
         <div class="nk-image-slider-item">
             <img src="src/assets/images/slide-4.jpg" alt="" class="nk-image-slider-img" data-thumb="src/assets/images/slide-4.jpg">
             <div class="nk-image-slider-content">
-                    <h3 class="h4"> Forza Horizon 5's map is here and the volcano is basically Mount Doom </h3>
+                    <h3 class="h4"> Forza Horizon 5's map is here! </h3>
                     <p class="text-white">La Gran Caldera dominates the northwest quadrant of the map,
                     and will probably loom large no matter where you are. It's going to be the jungle gym of the map,
                     where freeroam players zip around to catch major air off of its rim & bumpy sides.</p>
@@ -135,20 +140,30 @@
         <div class="nk-news-box-list">
             <div class="nano">
                 <div class="nano-content">
-                    
+                    <?php
+
+                    $titulli = $autori = $data = $permbajtja = $foto = ;
+
+                    $titulli = $_GET('$titulli');
+                    $autori = $_GET('autori');
+                    $data = $_GET('data');
+                    $permbajtja = $_GET 'permbajtja');
+                    $foto = $_GET('foto');
+
+                    ;?>
                     <div class="nk-news-box-item nk-news-box-item-active">
                         <div class="nk-news-box-item-img">
                             <img src="src/assets/images/post-1-sm.jpg" alt="Smell magic in the air. Or maybe barbecue">
                         </div>
                         <img src="src/assets/images/post-1.jpg" alt="Smell magic in the air. Or maybe barbecue" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">Smell magic in the air. Or maybe barbecue</h3>
+                        <h3 class="nk-news-box-item-title"><?php echo'$titulli';?></h3>
                         
                         <span class="nk-news-box-item-categories">
                             <span class="bg-main-4">MMO</span>
                         </span>
                         
                         <div class="nk-news-box-item-text">
-                            <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alonesrc.</p>
+                            <p></p>
                         </div>
                         <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
                         <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 18, 2018</div>
