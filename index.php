@@ -174,92 +174,38 @@ session_start();
             <div class="col-md-6 col-lg-6">
                 <!-- START: Post -->
                 <div class="nk-blog-post">
+                    <?php
+                    require "database/connect.php";
+                    $conn = $connect->prepare("SELECT * FROM blog");
+                    $conn->execute();
+                    $res = $conn->get_result();
+
+                    while($row = $res->fetch_assoc()):
+                    ?>
                     <a href="blog-article.php" class="nk-post-img">
-                        <img src="src/assets/images/post-5-mid.jpg" alt="He made his passenger captain of one">
+                        <img src="<?= $row['foto']?>" alt="">
                         <span class="nk-post-comments-count">13</span>
                         <span class="nk-post-categories">
-                            <span class="bg-main-5">Indie</span>
+                            <span class="bg-main-5"><?= $row['kategoria']?></span>
                         </span>
                     </a>
                     <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.php">He made his passenger captain of one</a></h2>
+                    <h2 class="nk-post-title h4"><a href="blog-article.php"><?= $row['titulli']?></a></h2>
                     <div class="nk-post-text">
-                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden doorsrc.</p>
+                        <p><?= $row['permbajtja']
+                        //Today, we invite everyone to reflect on the past year with us in the form of an interactive events timeline,
+                        // which can be viewed on the DEATH STRANDING PC website. We wanted to stop and take a moment to celebrate the positive events from the past year
+                        // those moments where we established a connection with our Porters, celebrated success and just had some fun.?></p>
                     </div>
                     <div class="nk-gap"></div>
                     <a href="blog-article.php" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
+                    <div class="nk-post-date float-right">
+                        Written By: <?=$row['autori']?> &nbsp; &nbsp;
+                        <span class="fa fa-calendar"></span><?= $row['data']?></div>
                 </div>
+                <?php endwhile;?>
                 <!-- END: Post -->
             </div>
-
-            <div class="col-md-6 col-lg-6">
-                <!-- START: Post -->
-                <div class="nk-blog-post">
-                    <a href="blog-article.php" class="nk-post-img">
-                        <img src="src/assets/images/post-6-mid.jpg" alt="At first, for some time, I was not able to answer">
-                        <span class="nk-post-comments-count">0</span>
-                        <span class="nk-post-categories">
-                            <span class="bg-main-5">Racing</span>
-                        </span>
-                    </a>
-                    <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.php">At first, for some time, I was not able to answer</a></h2>
-                    <div class="nk-post-text">
-                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to thatsrc.</p>
-                    </div>
-                    <div class="nk-gap"></div>
-                    <a href="blog-article.php" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                </div>
-                <!-- END: Post -->
-            </div>
-            
-            <div class="col-md-6 col-lg-6">
-                <!-- START: Post -->
-                <div class="nk-blog-post">
-                    <a href="blog-article.php" class="nk-post-img">
-                        <img src="src/assets/images/post-7-mid.jpg" alt="At length one of them called out in a clear">
-                        <span class="nk-post-comments-count">0</span>
-                        <span class="nk-post-categories">
-                            <span class="bg-main-6">MOBA</span>
-                        </span>
-                    </a>
-                    <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.php">At length one of them called out in a clear</a></h2>
-                    <div class="nk-post-text">
-                        <p>TJust then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden doorsrc.</p>
-                    </div>
-                    <div class="nk-gap"></div>
-                    <a href="blog-article.php" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                </div>
-                <!-- END: Post -->
-            </div>
-
-            <div class="col-md-6 col-lg-6">
-                <!-- START: Post -->
-                <div class="nk-blog-post">
-                    <a href="blog-article.php" class="nk-post-img">
-                        <img src="src/assets/images/post-8-mid.jpg" alt="For good, too though, in consequence">
-                        <span class="nk-post-comments-count">0</span>
-                        
-                        <span class="nk-post-categories">
-                            <span class="bg-main-2">Adventure</span>
-                        </span>
-                    </a>
-                    <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.php">For good, too though, in consequence</a></h2>
-                    <div class="nk-post-text">
-                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to thatsrc.</p>
-                    </div>
-                    <div class="nk-gap"></div>
-                    <a href="blog-article.php" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                </div>
-                <!-- END: Post -->
-            </div>
-            
         </div>
     </div>
     <!-- END: Latest News -->
