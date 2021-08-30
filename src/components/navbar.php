@@ -37,57 +37,30 @@ Additional Classes:
                     <img src="src/assets/images/logo.png" alt="SteCord" width="90">
                 </a>
             <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
-                    <li class=" nk-drop-item">
-                        <a href="elements.php"> Features </a>
-                <ul class="dropdown">
-                    <li class=" nk-drop-item">
-                        <a href="forum.php"> Forum </a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="forum.php"> Forum </a>
-                                </li>
-                                <li>
-                                    <a href="forum-topics.php"> Topics </a>
-                                </li>
-                            </ul>
-                    </li>
-                    <li>
-                        <a href="coming-soon.php"> Coming Soon </a>
-                    </li>
-                </ul>
-                    </li>
-                    <li class=" nk-drop-item">
-                        <a href="blog-list.php"> Blog </a>
-                <ul class="dropdown">
-                    <li class=" nk-drop-item">
-                        <a href="blog-grid.php"> Blog With Sidebar </a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="blog-grid.php"> Blog Grid </a>
-                                </li>
-                                <li>
-                                    <a href="blog-list.php"> Blog List </a>
-                                </li>
-                            </ul>
-                    </li>
-                    <li>
-                        <a href="blog-fullwidth.php"> Blog Fullwidth </a>
-                    </li>
-                    <li>
-                        <a href="blog-article.php"> Blog Article </a>
-                    </li>
-                </ul>
-                    </li>
-                    <li>
-                        <a href="gallery.php"> Gallery </a>
-                    </li>
-                    <li>
-                        <a href="news.php"> News </a>
-                    </li>
-                    <li>
-                        <a href="store.php"> Store </a>
-                    </li>
-                </ul>
+                <li>
+                    <a href="index.php"> Home </a>
+                </li>
+                <li class=" nk-drop-item">
+                    <a href="forum.php"> Forum </a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="forum-topics.php"> Topics </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="blog-list.php"> Blog </a>
+                </li>
+                <li>
+                    <a href="gallery.php"> Gallery </a>
+                </li>
+                <li>
+                    <a href="news.php"> News </a>
+                </li>
+                <li>
+                    <a href="store.php"> Store </a>
+                </li>
+            </ul>
                 <ul class="nk-nav nk-nav-right nk-nav-icons">
                     <li class="single-icon d-lg-none">
                         <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
