@@ -5,7 +5,7 @@
         <div class="row vertical-gap">
             <div class="col-md-6">
                 <div class="nk-widget">
-                    <h4 class="nk-widget-title"><span class="text-main-1">Contact</span> With Us</h4>
+                    <h4 class="nk-widget-title"><span class="text-main-1">Contact</span> Us</h4>
                     <div class="nk-widget-content">
                         <form action="ajax-contact-form.php" class="nk-form nk-form-ajax">
                             <div class="row vertical-gap sm-gap">
@@ -34,33 +34,26 @@
                     <h4 class="nk-widget-title"><span class="text-main-1">Latest</span> Posts</h4>
                     <div class="nk-widget-content">
                         <div class="row vertical-gap sm-gap">
+                            <?php
+                                require "database/connect.php";
+                                $conn = $connect->prepare("SELECT * FROM blog");
+                                $conn->execute();
+                                $res = $conn->get_result();
 
+                                while($row = $res->fetch_assoc()):
+                            ?>
                             <div class="col-lg-12">
                                 <div class="nk-widget-post-2">
                                     <a href="blog-article.php" class="nk-post-image">
-                                        <img src="src/assets/images/post-1-sm.jpg" alt="">
+                                        <img src="<?= $row['foto']?>" alt="">
                                     </a>
-                                    <div class="nk-post-title"><a href="blog-article.php">Smell magic in the air. Or maybe barbecue</a></div>
+                                    <div class="nk-post-title"><a href="blog-article.php"><?= $row['titulli']?></a></div>
                                     <div class="nk-post-date">
-                                        <span class="fa fa-calendar"></span> Sep 18, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">4</a>
+                                        <span class="fa fa-calendar"></span> <?= $row['data']?>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-lg-12">
-                                <div class="nk-widget-post-2">
-                                    <a href="blog-article.php" class="nk-post-image">
-                                        <img src="src/assets/images/post-2-sm.jpg" alt="">
-                                    </a>
-                                    <div class="nk-post-title"><a href="blog-article.php">Grab your sword and fight the Horde</a></div>
-                                    <div class="nk-post-date">
-                                        <span class="fa fa-calendar"></span> Sep 5, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">7</a>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <?php endwhile; ?>
                         </div>
                     </div>
                 </div>
