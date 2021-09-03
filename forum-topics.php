@@ -40,15 +40,12 @@
 <div class="nk-gap-1"></div>
 <div class="container">
     <ul class="nk-breadcrumbs">
-        
-        
+
         <li><a href="index.php">Home</a></li>
-        
-        
+
         <li><span class="fa fa-angle-right"></span></li>
         
-        <li><a href="forum.php">Forum</a></li>
-        
+        <li><a href="forum-topics.php">Forum</a></li>
         
         <li><span class="fa fa-angle-right"></span></li>
         
@@ -70,196 +67,36 @@
         <!-- END: Pagination -->
 
         <div class="nk-gap-2"></div>
+        <?php
+            require "database/connect.php";
+            $conn = $connect->prepare("SELECT * FROM forum");
+            $conn->execute();
+            $res = $conn->get_result();
 
+            while($row = $res->fetch_assoc()):
+        ?>
         <!-- START: Forums List -->
         <ul class="nk-forum">
             <li>
                 <div class="nk-forum-icon">
-                    <span class="ion-pin"></span>
-                </div>
-                <div class="nk-forum-title">
-                    <h3><a href="forum-single-topic.php">Suggestions</a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#">nK</a> on January 17, 2018</div>
-                </div>
-                <div class="nk-forum-count">
-                    178 posts
-                </div>
-                <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
-                        <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
-                    </a>
-                </div>
-                <div class="nk-forum-activity">
-                    <div class="nk-forum-activity-title" title="Hitman">
-                        <a href="#">Hitman</a>
-                    </div>
-                    <div class="nk-forum-activity-date">
-                        September 11, 2018
-                    </div>
-                </div>
-            </li>
-            <li class="nk-forum-locked">
-                <div class="nk-forum-icon">
                     <span class="ion-locked"></span>
                 </div>
                 <div class="nk-forum-title">
-                    <h3><a href="forum-single-topic.php">Are you ready for 2.0 release?</a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#">Hitman</a> on August 23, 2018</div>
-                </div>
-                <div class="nk-forum-count">
-                    3 posts
-                </div>
-                <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
-                        <img src="src/assets/images/avatar-2.jpg" alt="Witch Murder">
-                    </a>
-                </div>
-                <div class="nk-forum-activity">
-                    <div class="nk-forum-activity-title" title="Witch Murder">
-                        <a href="#">Witch Murder</a>
-                    </div>
-                    <div class="nk-forum-activity-date">
-                        August 26, 2018
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="nk-forum-icon">
-                    <span class="ion-chatboxes"></span>
-                </div>
-                <div class="nk-forum-title">
-                    <h3><a href="forum-single-topic.php">When will be next closed beta?</a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#">Hitman</a> on August 9, 2018</div>
-                </div>
-                <div class="nk-forum-count">
-                    4 posts
-                </div>
-                <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
-                        <img src="src/assets/images/avatar-3.jpg" alt="Wolfenstein">
-                    </a>
-                </div>
-                <div class="nk-forum-activity">
-                    <div class="nk-forum-activity-title" title="Wolfenstein">
-                        <a href="#">Wolfenstein</a>
-                    </div>
-                    <div class="nk-forum-activity-date">
-                        August 15, 2018
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="nk-forum-icon">
-                    <span class="ion-chatboxes"></span>
-                </div>
-                <div class="nk-forum-title">
-                    <h3><a href="forum-single-topic.php">Add new post types</a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#">Witch Murder</a> on Jule 28, 2018</div>
-                </div>
-                <div class="nk-forum-count">
-                    1 post
-                </div>
-                <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
-                        <img src="src/assets/images/avatar-2.jpg" alt="Witch Murder">
-                    </a>
-                </div>
-                <div class="nk-forum-activity">
-                    <div class="nk-forum-activity-title" title="Witch Murder">
-                        <a href="#">Witch Murder</a>
-                    </div>
-                    <div class="nk-forum-activity-date">
-                        Jule 28, 2018
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="nk-forum-icon">
-                    <span class="ion-chatboxes"></span>
-                </div>
-                <div class="nk-forum-title">
-                    <h3><a href="forum-single-topic.php">Clan Wars functionality</a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#">Hitman</a> on June 17, 2018</div>
-                </div>
-                <div class="nk-forum-count">
-                    8 posts
-                </div>
-                <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
-                        <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
-                    </a>
-                </div>
-                <div class="nk-forum-activity">
-                    <div class="nk-forum-activity-title" title="Hitman">
-                        <a href="#">Hitman</a>
-                    </div>
-                    <div class="nk-forum-activity-date">
-                        Jule 6, 2018
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="nk-forum-icon">
-                    <span class="ion-chatboxes"></span>
-                </div>
-                <div class="nk-forum-title">
-                    <h3><a href="forum-single-topic.php">Some questions before start</a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#">Hitman</a> on June 28, 2018</div>
-                </div>
-                <div class="nk-forum-count">
-                    1 post
-                </div>
-                <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
-                        <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
-                    </a>
-                </div>
-                <div class="nk-forum-activity">
-                    <div class="nk-forum-activity-title" title="Hitman">
-                        <a href="#">Hitman</a>
-                    </div>
-                    <div class="nk-forum-activity-date">
-                        June 28, 2018
-                    </div>
+                    <h3><a href="<?= $row['file']?>"><?= $row['titulli']?></a></h3>
+                    <div class="nk-forum-title-sub">Started by <a href="#"><?= $row['emri']?></a>
+                    on <?= $row['data_postim']?></div>
                 </div>
             </li>
         </ul>
+        <?php endwhile;?>
         <!-- END: Forums List -->
-
-        <div class="nk-gap-2"></div>
-
-        <!-- START: Pagination -->
-        <div class="row">
-            <div class="col-md-3 order-md-2 text-right">
-                <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white">New Topic</a>
-            </div>
-            <div class="col-md-9">
-                <div class="nk-pagination nk-pagination-left">
-                    <a href="#" class="nk-pagination-prev">
-                        <span class="ion-ios-arrow-back"></span>
-                    </a>
-                    <nav>
-                        <a class="nk-pagination-current" href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <span>...</span>
-                        <a href="#">14</a>
-                    </nav>
-                    <a href="#" class="nk-pagination-next">
-                        <span class="ion-ios-arrow-forward"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- END: Pagination -->
     </div>
 
     <div class="nk-gap-2"></div>
     <?php include "src/components/footer.php";?>
     </div>
 
-        <!-- START: Page Background -->
+<!-- START: Page Background -->
 
     <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">

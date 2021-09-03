@@ -40,13 +40,8 @@ Additional Classes:
                 <li>
                     <a href="index.php"> Home </a>
                 </li>
-                <li class=" nk-drop-item">
-                    <a href="forum.php"> Forum </a>
-                    <ul class="dropdown">
-                        <li>
-                            <a href="forum-topics.php"> Topics </a>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="forum-topics.php"> Forum </a
                 </li>
                 <li>
                     <a href="blog-list.php"> Blog </a>

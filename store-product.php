@@ -228,7 +228,7 @@
             </a>
         </li>
         <li>
-            <a href="forum-single-topic.php">
+            <a href="forum-topic.php">
                 Single Topic
                 
             </a>

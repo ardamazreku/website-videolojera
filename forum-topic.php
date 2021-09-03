@@ -39,34 +39,29 @@
 <!-- START: Breadcrumbs -->
 <div class="nk-gap-1"></div>
 <div class="container">
+    <?php
+        require "database/connect.php";
+        $conn = $connect->prepare("SELECT * FROM forum WHERE id = 1");
+        $conn->execute();
+        $res = $conn->get_result();
+
+        while($row = $res->fetch_assoc()):
+    ?>
     <ul class="nk-breadcrumbs">
-        
-        
         <li><a href="index.php">Home</a></li>
-        
-        
+
         <li><span class="fa fa-angle-right"></span></li>
         
-        <li><a href="forum.php">Forum</a></li>
-        
-        
+        <li><a href="forum-topics.php">Forum</a></li>
+
         <li><span class="fa fa-angle-right"></span></li>
         
-        <li><a href="forum-topics.php">Main Game Discussions</a></li>
-        
-        
-        <li><span class="fa fa-angle-right"></span></li>
-        
-        <li><span>Suggestions</span></li>
-        
+        <li><span><?= $row['titulli']?></span></li>
     </ul>
+    <?php endwhile; ?>
 </div>
 <div class="nk-gap-1"></div>
 <!-- END: Breadcrumbs -->
-
-        
-
-        
 
     <div class="container">
 
@@ -83,31 +78,30 @@
         <!-- START: Forums List -->
         <ul class="nk-forum nk-forum-topic">
             <li>
+                <?php
+                    require "database/connect.php";
+                    $conn = $connect->prepare("SELECT * FROM forum WHERE id = 1");
+                    $conn->execute();
+                    $res = $conn->get_result();
+
+                    while($row = $res->fetch_assoc()):
+                ?>
                 <div class="nk-forum-topic-author">
                     <a href="#">
-                        <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
+                        <img src="<?= $row['profile_pic']?>">
                     </a>
-                    <div class="nk-forum-topic-author-name" title="Hitman">
-                        <a href="#">Hitman</a>
+                    <div class="nk-forum-topic-author-name">
+                        <a href="#"><?= $row['emri']?></a>
                     </div>
-                    <div class="nk-forum-topic-author-role">Keymaster</div>
                     <div class="nk-forum-topic-author-since">
-                        Member since January 13, 2018
+                        Member since <?= $row['data_regjistrim']?>
                     </div>
                 </div>
                 <div class="nk-forum-topic-content">
-                    <p>Void whose god was over image signs creature sea air moved winged whose image creepeth two yielding. Moving made night firmament hath god sea waters were. It she'd dominion the of upon, night evening us yielding made form land darkness third. Lights lesser was darkness dominion two. Greater i every subdue shall form, had under i sixth fowl moving. Gathering moveth under given his very created. Beast.</p>
-                    <p>His, divided grass female first void firmament tree years gathering whose saw moving air upon first lights. Fill female give Divided signs above. Green sixth fruitful you seasons. Fly saying. Place appear After.</p>
-
-                    <div class="nk-forum-topic-attachments">
-                        <h4 class="h5">Attachments</h4>
-                        <a href="#">goodgames-free.zip</a>
-                        <br>
-                        (14.86 MiB) Downloaded 185 times
-                    </div>
+                    <p><?= $row['permbajtja']?></p>
                 </div>
                 <div class="nk-forum-topic-footer">
-                    <span class="nk-forum-topic-date">June 18, 2018</span>
+                    <span class="nk-forum-topic-date"><?= $row['data_postim']?></span>
 
                     <span class="nk-forum-action-btn">
                         <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
@@ -116,26 +110,34 @@
                         <a href="#"><span class="fa fa-flag"></span> Spam</a>
                     </span>
                 </div>
+                <!-- END: Forum Post -->
+                <?php endwhile;?>
             </li>
+            <!--START: Forum Post Replies -->
             <li>
+                <?php
+                    require "database/connect.php";
+                    $conn = $connect->prepare("SELECT * FROM forum_comments WHERE forum_id = 1");
+                    $conn->execute();
+                    $res = $conn->get_result();
+
+                    while($row = $res->fetch_assoc()):
+                ?>
                 <div class="nk-forum-topic-author">
                     <a href="#">
-                        <img src="src/assets/images/avatar-2.jpg" alt="Witch Murder">
+                        <img src="<?= $row['perdoruesi_foto']?>">
                     </a>
-                    <div class="nk-forum-topic-author-name" title="Witch Murder">
-                        <a href="#">Witch Murder</a>
+                    <div class="nk-forum-topic-author-name">
+                        <a href="#"><?= $row['perdoruesi_emri']?></a>
                     </div>
-                    <div class="nk-forum-topic-author-role">Participant</div>
                     <div class="nk-forum-topic-author-since">
-                        Member since March 27, 2018
+                        Member since <?= $row['data_regj']?>
                     </div>
                 </div>
                 <div class="nk-forum-topic-content">
-                    <p>Whose so, make moving beginning fowl place make form years lights wherein don't seas grass. Fruitful likeness appear bearing evening be. Earth form day form gathered whose place bearing creeping meat open had meat they're likeness shall waters won't can't one multiply sea seed green don't their beginning can't one fruit seasons the.</p>
-                    <p>Bearing beast creature replenish yielding female. Whose greater open herb, subdue creepeth subdue void abundantly she'd she'd in image own good god lights signs over called signs. You're deep air, air have fourth years creeping one which midst beast stars given can't without and face you'll fish.</p>
-                </div>
+                    <p><?= $row['permbajtja']?></p>
                 <div class="nk-forum-topic-footer">
-                    <span class="nk-forum-topic-date">June 19, 2018</span>
+                    <span class="nk-forum-topic-date"><?= $row['data']?></span>
 
                     <span class="nk-forum-action-btn">
                         <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
@@ -144,86 +146,12 @@
                         <a href="#"><span class="fa fa-flag"></span> Spam</a>
                     </span>
                 </div>
-            </li>
-            <li>
-                <div class="nk-forum-topic-author">
-                    <a href="#">
-                        <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
-                    </a>
-                    <div class="nk-forum-topic-author-name" title="Hitman">
-                        <a href="#">Hitman</a>
-                    </div>
-                    <div class="nk-forum-topic-author-role">Keymaster</div>
-                    <div class="nk-forum-topic-author-since">
-                        Member since January 13, 2018
-                    </div>
-                </div>
-                <div class="nk-forum-topic-content">
-                    <p>Given creeping he behold. Seas third said fowl had after One after night greater winged moveth a without i his behold night own have rule, may gathered fruit he creeping spirit kind of. Open earth. He for fish years in Unto forth abundantly two let. Image creature over whose deep.</p>
-                </div>
-                <div class="nk-forum-topic-footer">
-                    <span class="nk-forum-topic-date">June 20, 2018</span>
-
-                    <span class="nk-forum-action-btn">
-                        <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                    </span>
-                    <span class="nk-forum-action-btn">
-                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                    </span>
-                </div>
-            </li>
-            <li>
-                <div class="nk-forum-topic-author">
-                    <a href="#">
-                        <img src="src/assets/images/avatar-3.jpg" alt="Wolfenstein">
-                    </a>
-                    <div class="nk-forum-topic-author-name" title="Wolfenstein">
-                        <a href="#">Wolfenstein</a>
-                    </div>
-                    <div class="nk-forum-topic-author-role">Moderator</div>
-                    <div class="nk-forum-topic-author-since">
-                        Member since February 2, 2018
-                    </div>
-                </div>
-                <div class="nk-forum-topic-content">
-                    <p>Was beginning so you're years so third it moveth had. Have open. Every. Firmament seasons one his creepeth forth beast.</p>
-                    <div class="nk-plain-video" data-video="https://www.youtube.com/watch?v=6cXyQg_5uoc"></div>
-                </div>
-                <div class="nk-forum-topic-footer">
-                    <span class="nk-forum-topic-date">June 23, 2018</span>
-
-                    <span class="nk-forum-action-btn">
-                        <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                    </span>
-                    <span class="nk-forum-action-btn">
-                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                    </span>
-                </div>
+                <?php endwhile;?>
             </li>
         </ul>
         <!-- END: Forums List -->
 
         <div class="nk-gap-2"></div>
-
-        <!-- START: Pagination -->
-        <div class="nk-pagination nk-pagination-left">
-            <a href="#" class="nk-pagination-prev">
-                <span class="ion-ios-arrow-back"></span>
-            </a>
-            <nav>
-                <a class="nk-pagination-current" href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <span>...</span>
-                <a href="#">14</a>
-            </nav>
-            <a href="#" class="nk-pagination-next">
-                <span class="ion-ios-arrow-forward"></span>
-            </a>
-        </div>
-        <!-- END: Pagination -->
-
         <div id="forum-reply"></div>
         <div class="nk-gap-4"></div>
         <!-- START: Reply -->
@@ -241,10 +169,7 @@
     <?php include "src/components/footer.php";?>
     </div>
 
-    
-
-    
-        <!-- START: Page Background -->
+<!-- START: Page Background -->
 
     <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
@@ -315,8 +240,5 @@
 <script src="src/assets/js/goodgames.min.js"></script>
 <script src="src/assets/js/goodgames-init.js"></script>
 <!-- END: Scripts -->
-
-
-    
 </body>
 </html>

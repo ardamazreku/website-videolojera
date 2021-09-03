@@ -76,7 +76,7 @@
                         <div class="nk-blog-post">
                             <div class="row vertical-gap">
                                 <div class="col-md-5 col-lg-6">
-                                    <a href="blog-article.php" class="nk-post-img">
+                                    <a href="<?= $row['blog_file']?>" class="nk-post-img">
                                         <img src="<?= $row['foto']?>" alt="">
                                     </a>
                                 </div>

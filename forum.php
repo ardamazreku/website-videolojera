@@ -71,13 +71,13 @@
                     1267 threads
                 </div>
                 <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
+                    <a href="forum-topic.php">
                         <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
                     </a>
                 </div>
                 <div class="nk-forum-activity">
                     <div class="nk-forum-activity-title" title="GodLike the only game that I want to play!">
-                        <a href="forum-single-topic.php">GodLike the only game that I want to play!</a>
+                        <a href="forum-topic.php">GodLike the only game that I want to play!</a>
                     </div>
                     <div class="nk-forum-activity-date">
                         September 11, 2018
@@ -96,13 +96,13 @@
                     78 threads
                 </div>
                 <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
+                    <a href="forum-topic.php">
                         <img src="src/assets/images/avatar-2.jpg" alt="Witch Murder">
                     </a>
                 </div>
                 <div class="nk-forum-activity">
                     <div class="nk-forum-activity-title" title="Install on Windows 95">
-                        <a href="forum-single-topic.php">Install on Windows 95</a>
+                        <a href="forum-topic.php">Install on Windows 95</a>
                     </div>
                     <div class="nk-forum-activity-date">
                         March 2, 2018
@@ -121,13 +121,13 @@
                     433 threads
                 </div>
                 <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
+                    <a href="forum-topic.php">
                         <img src="src/assets/images/avatar-3.jpg" alt="Wolfenstein">
                     </a>
                 </div>
                 <div class="nk-forum-activity">
                     <div class="nk-forum-activity-title" title="How to solve error with PS Network?">
-                        <a href="forum-single-topic.php">How to solve error with PS Network?</a>
+                        <a href="forum-topic.php">How to solve error with PS Network?</a>
                     </div>
                     <div class="nk-forum-activity-date">
                         May 19, 2018
@@ -146,13 +146,13 @@
                     321 threads
                 </div>
                 <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
+                    <a href="forum-topic.php">
                         <img src="src/assets/images/avatar-2.jpg" alt="Witch Murder">
                     </a>
                 </div>
                 <div class="nk-forum-activity">
                     <div class="nk-forum-activity-title" title="I want game quality like on PC!!!">
-                        <a href="forum-single-topic.php">I want game quality like on PC!!!</a>
+                        <a href="forum-topic.php">I want game quality like on PC!!!</a>
                     </div>
                     <div class="nk-forum-activity-date">
                         Jule 28, 2018
@@ -171,13 +171,13 @@
                     156 threads
                 </div>
                 <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
+                    <a href="forum-topic.php">
                         <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
                     </a>
                 </div>
                 <div class="nk-forum-activity">
                     <div class="nk-forum-activity-title" title="60fps - easy">
-                        <a href="forum-single-topic.php">60fps - easy</a>
+                        <a href="forum-topic.php">60fps - easy</a>
                     </div>
                     <div class="nk-forum-activity-date">
                         August 18, 2018
@@ -196,13 +196,13 @@
                     1872 threads
                 </div>
                 <div class="nk-forum-activity-avatar">
-                    <a href="forum-single-topic.php">
+                    <a href="forum-topic.php">
                         <img src="src/assets/images/avatar-1.jpg" alt="Hitman">
                     </a>
                 </div>
                 <div class="nk-forum-activity">
                     <div class="nk-forum-activity-title" title="Download game for free?">
-                        <a href="forum-single-topic.php">Download game for free?</a>
+                        <a href="forum-topic.php">Download game for free?</a>
                     </div>
                     <div class="nk-forum-activity-date">
                         September 5, 2018

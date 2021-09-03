@@ -44,10 +44,10 @@
                             ?>
                             <div class="col-lg-12">
                                 <div class="nk-widget-post-2">
-                                    <a href="blog-article.php" class="nk-post-image">
+                                    <a href="<?= $row['blog_file']?>" class="nk-post-image">
                                         <img src="<?= $row['foto']?>" alt="">
                                     </a>
-                                    <div class="nk-post-title"><a href="blog-article.php"><?= $row['titulli']?></a></div>
+                                    <div class="nk-post-title"><a href="<?= $row['blog_file']?>"><?= $row['titulli']?></a></div>
                                     <div class="nk-post-date">
                                         <span class="fa fa-calendar"></span> <?= $row['data']?>
                                     </div>

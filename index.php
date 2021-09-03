@@ -59,7 +59,7 @@ session_start();
             <div class="nk-image-slider-content">
                 <h3 class="h4"><?= $row['titulli']?></h3>
                 <p class="text-white"><?= $row['permbajtja']?></p>
-                <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
+                <a href="<?= $row['file']?>" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Read More</a>
             </div>
         </div>
         <?php endwhile;?>
@@ -102,7 +102,7 @@ session_start();
     </div>
     <!-- END: Categories -->
 
-    <!-- START: Post -->
+    <!-- START: Blog Posts -->
     <div class="nk-gap-2"></div>
     <h3 class="nk-decorated-h-2">
         <span>
@@ -122,8 +122,8 @@ session_start();
             ?>
             <div class="col-md-6 col-lg-6 col-sm-12">
                 <div class="nk-blog-post">
-                    <a href="blog-article.php" class="nk-post-img">
-                        <img src="<?= $row['foto']?>" alt="">
+                    <a href="<?= $row['blog_file']?>" class="nk-post-img">
+                        <img src="<?= $row['foto']?>">
                         <span class="nk-post-categories">
                             <span class="bg-main-5"><?= $row['kategoria']?></span>
                         </span>
@@ -131,17 +131,19 @@ session_start();
                     <div class="nk-gap"></div>
                     <h2 class="nk-post-title h4"><a href="blog-article.php"><?= $row['titulli']?></a></h2>
                     <div class="nk-post-text">
-                        <p><?= $row['permbajtja']?></p>
+                        <p><?= $row['permbajtja'] ?>..</p>
                     </div>
                     <div class="nk-gap"></div>
-                    <a href="blog-article.php" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
+                    <a href="<?= $row['blog_file']?>" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
                     <div class="nk-post-date float-right">
-                        Written By: <?=$row['autori']?> &nbsp; &nbsp;
+                    <img src="<?= $row['profile_pic'] ?>" class="rounded-circle" width="30">
+                        &nbsp; Written By: <?=$row['autori']?> &nbsp; &nbsp;
                         <span class="fa fa-calendar"></span><?= $row['data']?>
                     </div>
                 </div>
             </div>
             <?php endwhile;?>
+            <div class="nk-gap-2"></div>
         </div>
     </div>
     <!-- END: Post -->
@@ -157,29 +159,29 @@ session_start();
                 <div class="row">
                     <?php
                         require "database/connect.php";
-                        $conn = $connect->prepare("SELECT * FROM forum");
+                        $conn = $connect->prepare("SELECT * FROM forum WHERE id = 2");
                         $conn->execute();
                         $res = $conn->get_result();
 
                         while($row = $res->fetch_assoc()):
                     ?>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-12">
                         <!-- START: Post -->
                         <div class="nk-blog-post">
-                            <a href="blog-article.php" class="nk-post-img">
+                            <a href="<?= $row['file']?>" class="nk-post-img">
                                 <img src="<?= $row['attachment']?>">
-                                <span class="nk-post-comments-count">13</span>
                             </a>
                             <div class="nk-gap"></div>
                             <div class="nk-post-by">
-                                <img src="<?= $row['profile_pic']?>" class="rounded-circle" width="35"> by <a href="#"><?= $row['emri']?></a> in <?= $row['data_postim']?>
+                                <img src="<?= $row['profile_pic']?>" class="rounded-circle" width="35">
+                                by <a href="#"><?= $row['emri']?></a> in <?= $row['data_postim']?>
                             </div>
                             <div class="nk-gap"></div>
                             <div class="nk-post-text">
                                 <p><?= $row['permbajtja']?></p>
                             </div>
                             <div class="nk-gap"></div>
-                            <a href="blog-article.php" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
+                            <a href="<?= $row['file']?>" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
                         </div>
                         <!-- END: Post -->
                     </div>
@@ -202,13 +204,13 @@ session_start();
                     <div class="nano">
                         <div class="nano-content">
                             <?php
-                            require "database/connect.php";
-                            $conn = $connect->prepare("SELECT * FROM lajmet");
-                            $conn->execute();
-                            $res = $conn->get_result();
+                                require "database/connect.php";
+                                $conn = $connect->prepare("SELECT * FROM lajmet");
+                                $conn->execute();
+                                $res = $conn->get_result();
 
-                            while($row = $res->fetch_assoc()):
-                                ?>
+                                while($row = $res->fetch_assoc()):
+                            ?>
                                 <div class="nk-news-box-item nk-news-box-item-active">
                                     <div class="nk-news-box-item-img">
                                         <img src="<?= $row['foto']?>" alt="">
@@ -217,13 +219,12 @@ session_start();
                                     <h3 class="nk-news-box-item-title"><?=$row['titulli'] ?></h3>
 
                                     <span class="nk-news-box-item-categories">
-                            <span class="bg-main-5"><?=$row['kategoria']?></span>
-                        </span>
-
+                                        <span class="bg-main-5"><?=$row['kategoria']?></span>
+                                    </span>
                                     <div class="nk-news-box-item-text">
                                         <p><?=$row['permbajtja']?></p>
                                     </div>
-                                    <a href="blog-article.php" class="nk-news-box-item-url">Read More</a>
+                                    <a href="<?= $row['file']?>" class="nk-news-box-item-url">Read More</a>
                                     <div class="nk-news-box-item-date">
                                         Written By: <?=$row['autori']?> &nbsp; &nbsp; &nbsp;
                                         <span class="fa fa-calendar"></span> &nbsp; <?=$row['data']?>
