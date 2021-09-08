@@ -9,7 +9,7 @@ $pass = $_POST['password'];
 $login = true;
 
 //konektimi me db
-$server = 'localhost:3307';
+$server = 'localhost:3306';
 $user = 'root';
 $password = '';
 $dbName = 'videolojera';
@@ -20,7 +20,7 @@ $connect = mysqli_connect($server,$user,$password,$dbName);
 
 //nese asnjera nga fushat nuk eshte plotesuar
 if(empty($email) && empty($pass)) {
-    $errorGen = "Email and password empty!";
+    $errorGen = "Email and password are required!";
     $login = false;
 }
 
@@ -50,7 +50,6 @@ else {
     }
 
     //validimi i password-it
-
     //nese fjalekalimi eshte i zbrazet
     if(empty($pass)) {
         $errorPassword = "Password is required!";
@@ -60,7 +59,6 @@ else {
     //nese fjalekalimi ka vlere, validoje ate
     else {
         //nese fjalekalimi per kete perdorues nuk eshte i sakte
-
         $query2 = "SELECT password FROM perdoruesi WHERE email = '$email';";
         $query2Res = mysqli_query($connect, $query2);
         $query2Row = mysqli_fetch_array($query2Res);
@@ -87,7 +85,7 @@ else {
         $_SESSION['roli_id'] = $roli;
 
         //ridrejtoje ne faqen baze e cila mund te qaset pas kyqjes
-        header("Location: ../components/navbar.php");
+        header("Location: index.php");
     }
 }
 

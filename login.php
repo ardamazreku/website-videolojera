@@ -87,6 +87,7 @@ if(!isset($_SESSION['email'])) {
                         </label>
                         <input type="password" name="password" placeholder="Enter password" value="<?php echo $pass; ?>">
                         <?php echo "<span class='error'>$errorPassword<span>";?>
+                        <?php echo "<span class='error'>$errorGen<span>";?>
                     </div>
                     <div class="nk-gap-1"></div>
                     <div class="row mb-3 px-3">
@@ -102,8 +103,18 @@ if(!isset($_SESSION['email'])) {
                 </div>
             </div>
         </div>
-        <div class="bg-blue py-4">
-            <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2021. All rights reserved.</small></div>
+        <div class="bg-blue py-4" style ="padding: 20px">
+            <script>
+                const date = new Date();
+                const year = date.getFullYear();
+            </script>
+            <div class="row px-3">
+                <small class="ml-4 ml-sm-5 mb-2">Copyright &copy;
+                    <script>
+                        document.write(year);
+                    </script>. All rights reserved.
+                </small>
+            </div>
         </div>
     </div>
 </div>
