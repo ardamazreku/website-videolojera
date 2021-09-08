@@ -87,7 +87,7 @@ else {
         $_SESSION['roli_id'] = $roli;
 
         //ridrejtoje ne faqen baze e cila mund te qaset pas kyqjes
-        header("Location: index.php");
+        header("Location: ../components/navbar.php");
     }
 }
 

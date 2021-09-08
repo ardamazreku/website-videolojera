@@ -1,18 +1,18 @@
+<?php include "src/components/search.php";?>
+
 <header class="nk-header nk-header-opaque">
 <!-- START: Top Contacts -->
 <div class="nk-contacts-top">
     <div class="container">
         <div class="nk-contacts-right">
             <ul class="nk-contacts-icons">
-
                 <li>
                     <a href="#" data-toggle="modal" data-target="#modalSearch">
                         <span class="fa fa-search"></span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modalLogin">
+                    <a href="login.php">
                         <span class="fa fa-user"></span>
                     </a>
                 </li>
@@ -22,14 +22,7 @@
 </div>
 <!-- END: Top Contacts -->
 
-<!--
-START: Navbar
-
-Additional Classes:
-.nk-navbar-sticky
-.nk-navbar-transparent
-.nk-navbar-autohide
--->
+<!-- START: Navbar -->
     <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
         <div class="container">
             <div class="nk-nav-table">
@@ -88,9 +81,7 @@ Additional Classes:
                 <img src="src/assets/images/logo.png" alt="" width="40">
             </a>
             <div class="nk-navbar-mobile-content">
-                <ul class="nk-nav">
-                    <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
-                </ul>
+                <ul class="nk-nav"></ul>
             </div>
         </div>
     </div>

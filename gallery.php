@@ -303,7 +303,7 @@
 
 <!-- END: Page Background -->
 
-<?php include "src/components/modals.php";?>
+<?php include "src/components/search.php";?>
 
 <!-- START: Scripts -->
 

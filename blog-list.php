@@ -35,30 +35,23 @@
 <body>
 <?php include "src/components/navbar.php";?>
 <div class="nk-main">
-        
 <!-- START: Breadcrumbs -->
 <div class="nk-gap-1"></div>
 <div class="container">
     <ul class="nk-breadcrumbs">
-        
-        
         <li><a href="index.php">Home</a></li>
-        
-        
+
         <li><span class="fa fa-angle-right"></span></li>
         
         <li><a href="blog-list.php">Blog</a></li>
         
-        
         <li><span class="fa fa-angle-right"></span></li>
         
         <li><span>Blog List</span></li>
-        
     </ul>
 </div>
 <div class="nk-gap-1"></div>
 <!-- END: Breadcrumbs -->
-
     <div class="container">
         <div class="row vertical-gap">
             <div class="col-lg-8">
@@ -93,10 +86,8 @@
                         </div>
                     <?php endwhile;?>
                         <!-- END: Post -->
-
                 </div>
                 <!-- END: Posts List -->
-
             </div>
             <?php include"src/components/aside.php"; ?>
         </div>
@@ -106,14 +97,12 @@
     <?php include "src/components/footer.php";?>
     </div>
 
-        <!-- START: Page Background -->
-
+<!-- START: Page Background -->
     <img class="nk-page-background-top" src="src/assets/images/bg-top-3.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
-
 <!-- END: Page Background -->
 
-<?php include "src/components/modals.php";?>
+<?php include "src/components/search.php";?>
 
 <!-- START: Scripts -->
 
@@ -169,9 +158,6 @@
 
 <!-- Summernote -->
 <script src="src/assets/vendor/summernote/dist/summernote-bs4.min.js"></script>
-
-<!-- nK Share -->
-<script src="src/assets/plugins/nk-share/nk-share.js"></script>
 
 <!-- GoodGames -->
 <script src="src/assets/js/goodgames.min.js"></script>
