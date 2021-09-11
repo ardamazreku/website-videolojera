@@ -352,7 +352,6 @@ session_start();
 <!-- START: Page Background -->
     <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
-
 <!-- END: Page Background -->
 
 <!-- START: Scripts -->
