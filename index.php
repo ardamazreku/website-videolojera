@@ -140,10 +140,9 @@ session_start();
                         &nbsp; Written By: <?=$row['autori']?> &nbsp; &nbsp;
                         <span class="fa fa-calendar"></span><?= $row['data']?>
                     </div>
-                </div>
+                </div><div class="nk-gap-2"></div>
             </div>
             <?php endwhile;?>
-            <div class="nk-gap-2"></div>
         </div>
     </div>
     <!-- END: Post -->
