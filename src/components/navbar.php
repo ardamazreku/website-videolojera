@@ -19,44 +19,42 @@
                     <li>
                         <a href="news.php"> News </a>
                     </li>
-                    <li>
+<?php
+
+                if (!isset($_SESSION['email'])) {
+                    echo'<li>
                         <a href="login.php">
                             <span class="fa fa-user"></span>
                         </a>
-                    </li>
+                        </li>';
+                }
+                //nese perdoruesi eshte kyqur ne sistem
+                else {
+                    if(isset($_SESSION['roli_id'])) {
+                        //perdorues
+                        if ($_SESSION['roli_id'] == 3) {
+                            echo '
+                                <li>
+                                    <a href="forum-topics.php"> Forum </a>
+                                </li>
+                                <li>
+                                    <a href="store.php"> Store </a>
+                                </li>';
+                        }
+                        //mirembajtese
+                        else if ($_SESSION['roli_id'] == 2) {
+
+                        }
+                        //admin
+                        else if ($_SESSION['roli_id'] == 1) {
+
+                        }
+                    }
+                        echo '<li><a href = "src/validate/logOut.php">Log Out</a></li>';
+                }
+?>
                 </ul>
             </div>
-<?php
-
-    if (!isset($_SESSION['email'])) {
-
-    }
-    //nese perdoruesi eshte kyqur ne sistem
-    else {
-        if(isset($_SESSION['roli_id'])) {
-            //perdorues
-            if ($_SESSION['roli_id'] == 3) {
-                echo '
-                    <li>
-                        <a href="forum-topics.php"> Forum </a>
-                    </li>
-                    <li>
-                        <a href="store.php"> Store </a>
-                    </li>
-                </ul>';
-            }
-            //mirembajtese
-            else if ($_SESSION['roli_id'] == 2) {
-
-            }
-            //admin
-            else if ($_SESSION['roli_id'] == 1) {
-
-            }
-        }
-            echo '<li><a href = "src/validate/logOut.php">Log Out</a></li>';
-    }
-?>
             <ul class="nk-nav nk-nav-right nk-nav-icons">
                 <li class="single-icon d-lg-none">
                     <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
@@ -68,7 +66,6 @@
                     </a>
                 </li>
             </ul>
-            </div>
         </div>
     </nav>
     <!-- END: Navbar -->

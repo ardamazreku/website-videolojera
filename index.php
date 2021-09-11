@@ -351,8 +351,6 @@ session_start();
 
 <!-- END: Page Background -->
 
-<?php include "src/components/search.php";?>
-
 <!-- START: Scripts -->
 
 <!-- Object Fit Polyfill -->
