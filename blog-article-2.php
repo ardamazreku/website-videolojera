@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +49,7 @@
 
         <li><span class="fa fa-angle-right"></span></li>
 
-        <li><a href="#">Blog</a></li>
+        <li><a href="blog-list.php">Blog</a></li>
 
         <li><span class="fa fa-angle-right"></span></li>
     </ul>
@@ -175,13 +178,9 @@
 </div>
 
 <!-- START: Page Background -->
-
     <img class="nk-page-background-top" src="src/assets/images/bg-top-5.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
-
 <!-- END: Page Background -->
-
-<?php include "src/components/search.php";?>
 
 <!-- START: Scripts -->
 

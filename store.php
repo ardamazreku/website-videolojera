@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -661,21 +664,12 @@
     </div>
 </footer>
 <!-- END: Footer -->
+</div>
 
-        
-    </div>
-
-    
-
-    
-        <!-- START: Page Background -->
-
+<!-- START: Page Background -->
     <img class="nk-page-background-top" src="src/assets/images/bg-top-4.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
-
 <!-- END: Page Background -->
-
-<?php include "src/components/search.php";?>
 
 <!-- START: Scripts -->
 

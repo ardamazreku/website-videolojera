@@ -42,7 +42,7 @@ if(!isset($_SESSION['email'])) {
 <body>
 <?php include "src/components/navbar.php";?>
 
-    <?php
+<?php
 
     $email = "";
 
@@ -125,10 +125,7 @@ if(!isset($_SESSION['email'])) {
 <!-- START: Page Background -->
 <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">
 <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
-
 <!-- END: Page Background -->
-
-<?php include "src/components/search.php";?>
 
 <!-- START: Scripts -->
 

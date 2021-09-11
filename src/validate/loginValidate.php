@@ -9,7 +9,7 @@ $pass = $_POST['password'];
 $login = true;
 
 //konektimi me db
-$server = 'localhost:3306';
+$server = 'localhost:3307';
 $user = 'root';
 $password = '';
 $dbName = 'videolojera';
@@ -85,7 +85,7 @@ else {
         $_SESSION['roli_id'] = $roli;
 
         //ridrejtoje ne faqen baze e cila mund te qaset pas kyqjes
-        header("Location: index.php");
+        echo'<script> location.replace("index.php"); </script>';
     }
 }
-
+?>

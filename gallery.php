@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -302,8 +305,6 @@
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
 
 <!-- END: Page Background -->
-
-<?php include "src/components/search.php";?>
 
 <!-- START: Scripts -->
 
