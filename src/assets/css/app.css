@@ -9076,10 +9076,10 @@ div.nk-error {
 }
 
 .nk-forum > li .nk-forum-icon {
-    min-width: 55px;
+    min-width: 80px;
 }
 
-.nk-forum > li .nk-forum-icon > span {
+.nk-forum > li .nk-forum-icon > i {
     display: block;
     font-size: 1.8rem;
     line-height: 1;
@@ -9183,9 +9183,7 @@ div.nk-error {
 }
 
 @media (max-width: 575px) {
-    .nk-forum > li .nk-forum-icon {
-        display: none;
-    }
+
 }
 
 /* Single Topic */

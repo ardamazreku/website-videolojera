@@ -79,12 +79,9 @@
         .nk-navbar-lg
         .nk-navbar-overlay-content
 -->
-<div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
+<div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-left-side nk-navbar-overlay-content d-lg-none">
     <div class="nano">
         <div class="nano-content">
-            <a href="index.php">
-                <img src="src/assets/images/logo.png" alt="" width="40">
-            </a>
             <div class="nk-navbar-mobile-content">
                 <ul class="nk-nav"></ul>
             </div>

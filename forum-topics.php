@@ -20,6 +20,8 @@ session_start();
     <!-- FontAwesome -->
     <script defer src="src/assets/vendor/fontawesome-free/js/all.js"></script>
     <script defer src="src/assets/vendor/fontawesome-free/js/v4-shims.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css" integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
     <!-- IonIcons -->
     <link rel="stylesheet" href="src/assets/vendor/ionicons/css/ionicons.min.css">
     <!-- Flickity -->
@@ -83,12 +85,12 @@ session_start();
         <ul class="nk-forum">
             <li>
                 <div class="nk-forum-icon">
-                    <span class="ion-locked"></span>
+                    <i class="fad fa-dice-d8"></i>
                 </div>
                 <div class="nk-forum-title">
                     <h3><a href="<?= $row['file']?>"><?= $row['titulli']?></a></h3>
                     <div class="nk-forum-title-sub">Started by <a href="#"><?= $row['emri']?></a>
-                    on <?= $row['data_postim']?></div>
+                    <i class="fas fa-check-circle"></i> on <?= $row['data_postim']?></div>
                 </div>
             </li>
         </ul>
@@ -105,70 +107,7 @@ session_start();
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
 <!-- END: Page Background -->
 
-<!-- START: Scripts -->
+<?php include "scripts.php";?>
 
-<!-- Object Fit Polyfill -->
-<script src="src/assets/vendor/object-fit-images/dist/ofi.min.js"></script>
-
-<!-- GSAP -->
-<script src="src/assets/vendor/gsap/src/minified/TweenMax.min.js"></script>
-<script src="src/assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
-
-<!-- Popper -->
-<script src="src/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="src/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Sticky Kit -->
-<script src="src/assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
-
-<!-- Jarallax -->
-<script src="src/assets/vendor/jarallax/dist/jarallax.min.js"></script>
-<script src="src/assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
-
-<!-- imagesLoaded -->
-<script src="src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-
-<!-- Flickity -->
-<script src="src/assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
-
-<!-- Photoswipe -->
-<script src="src/assets/vendor/photoswipe/dist/photoswipe.min.js"></script>
-<script src="src/assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
-
-<!-- Jquery Validation -->
-<script src="src/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-
-<!-- Jquery Countdown + Moment -->
-<script src="src/assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
-<script src="src/assets/vendor/moment/min/moment.min.js"></script>
-<script src="src/assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
-
-<!-- Hammer.js -->
-<script src="src/assets/vendor/hammerjs/hammer.min.js"></script>
-
-<!-- NanoSroller -->
-<script src="src/assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
-
-<!-- SoundManager2 -->
-<script src="src/assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
-
-<!-- Seiyria Bootstrap Slider -->
-<script src="src/assets/vendor/bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-
-<!-- Summernote -->
-<script src="src/assets/vendor/summernote/dist/summernote-bs4.min.js"></script>
-
-<!-- nK Share -->
-<script src="src/assets/plugins/nk-share/nk-share.js"></script>
-
-<!-- GoodGames -->
-<script src="src/assets/js/goodgames.min.js"></script>
-<script src="src/assets/js/goodgames-init.js"></script>
-<!-- END: Scripts -->
-
-
-    
 </body>
 </html>
