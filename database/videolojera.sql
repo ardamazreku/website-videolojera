@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Sep 11, 2021 at 12:12 PM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Host: 127.0.0.1:3307
+-- Generation Time: Sep 11, 2021 at 12:16 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -192,6 +191,7 @@ CREATE TABLE IF NOT EXISTS `lajmet` (
   `permbajtja` longtext NOT NULL,
   `foto` varchar(50) NOT NULL,
   `kategoria` varchar(10) NOT NULL,
+  `file` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `roli` (`roli`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
@@ -200,11 +200,11 @@ CREATE TABLE IF NOT EXISTS `lajmet` (
 -- Dumping data for table `lajmet`
 --
 
-INSERT INTO `lajmet` (`id`, `roli`, `titulli`, `autori`, `data`, `permbajtja`, `foto`, `kategoria`) VALUES
-(1, 1, 'BLACK OPS COLD WAR', 'Arda Mazreku', '2021-08-01', 'As the Zombie Outbreak grows, only the most fearless Operators will answer the call.\r\nA mountain of new Zombies content is coming to #BlackOpsColdWar this week. Get ready to climb!', 'src/assets/images/slide-1.jpg', 'FPS'),
-(2, 1, 'Assasin\'s Creed VALHALLA ', 'Arda Mazreku', '2021-08-03', 'The wait is over! 0 days left until kings and rats and castles alike. The Siege of Paris launched on August 12th! ', 'src/assets/images/slide-2.jpg', 'Single'),
-(3, 1, 'Forza Horizon 5\'s map is here!', 'Arda Mazreku', '2021-08-08', 'La Gran Caldera dominates the northwest quadrant of the map, and will probably loom large no matter where you are. It\'s going to be the jungle gym of the map, where freeroam players zip around to catch major air off of its rim & bumpy sides.', 'src/assets/images/slide-4.jpg', 'Race'),
-(4, 2, 'Four Of The Best PC Games Ever Are Free Right Now', 'Festa Mazreku', '2021-08-10', 'Ultima Underworlds 1 & 2, Syndicate, and Syndicate Wars are back and until September 3, they\'re free!', 'src/assets/images/slide-5.jpg', 'Single');
+INSERT INTO `lajmet` (`id`, `roli`, `titulli`, `autori`, `data`, `permbajtja`, `foto`, `kategoria`, `file`) VALUES
+(1, 1, 'BLACK OPS COLD WAR', 'Arda Mazreku', '2021-08-01', 'As the Zombie Outbreak grows, only the most fearless Operators will answer the call.\r\nA mountain of new Zombies content is coming to #BlackOpsColdWar this week. Get ready to climb!', 'src/assets/images/slide-1.jpg', 'FPS', 'news-1.php'),
+(2, 1, 'Assasin\'s Creed VALHALLA ', 'Arda Mazreku', '2021-08-03', 'The wait is over! 0 days left until kings and rats and castles alike. The Siege of Paris launched on August 12th! ', 'src/assets/images/slide-2.jpg', 'Single', 'news-2.php'),
+(3, 1, 'Forza Horizon 5\'s map is here!', 'Arda Mazreku', '2021-08-08', 'La Gran Caldera dominates the northwest quadrant of the map, and will probably loom large no matter where you are. It\'s going to be the jungle gym of the map, where freeroam players zip around to catch major air off of its rim & bumpy sides.', 'src/assets/images/slide-4.jpg', 'Racing', 'news-3.php'),
+(4, 2, 'Four Of The Best PC Games Ever Are Free Right Now', 'Festa Mazreku', '2021-08-10', 'Ultima Underworlds 1 & 2, Syndicate, and Syndicate Wars are back and until September 3, they\'re free!', 'src/assets/images/slide-5.jpg', 'Single', 'news-4.php');
 
 -- --------------------------------------------------------
 
@@ -220,25 +220,28 @@ CREATE TABLE IF NOT EXISTS `perdoruesi` (
   `emri` varchar(20) NOT NULL,
   `mbiemri` varchar(30) NOT NULL,
   `nickname` varchar(30) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `confirmpass` varchar(30) NOT NULL,
   `foto` varchar(100) NOT NULL,
   `data_regj` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `roli_id` (`roli_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `perdoruesi`
 --
 
-INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname`, `password`, `foto`, `data_regj`) VALUES
-(1, 1, 'ardamazreku99@gmail.com', 'Arda', 'Mazreku', '', 'Arda123!', 'src/assets/images/avatar-3.jpg', '2021-07-01'),
-(2, 2, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina123!', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
-(3, 2, 'festamazreku@gmail.com', 'Festa', 'Mazreku', '', 'Festa99!', '', '2021-08-01'),
-(4, 3, 'user123@gmail.com', 'Skyler', 'Johnson', 'SkyLerR12', 'skyLeR24!', 'src/assets/images/gallery-group-4', '2021-08-15'),
-(5, 3, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
-(6, 3, 'bernardnekk@gmail.com', 'Bernard', 'Nekken', 'BernyBoi99', 'BernardNekk1999', 'src/assets/images/gallery-group-5.jpg', '2021-08-05'),
-(7, 2, 'universalplayer@hotmail.com', 'Jack', 'Sparrow', 'UniversalGamer', 'universe19293', 'src/assets/images/post-7-mid-square.jpg', '2021-08-10');
+INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname`, `password`, `confirmpass`, `foto`, `data_regj`) VALUES
+(1, 1, 'ardamazreku99@gmail.com', 'Arda', 'Mazreku', '', 'Arda123!', '', 'src/assets/images/avatar-3.jpg', '2021-07-01'),
+(2, 2, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina123!', '', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
+(3, 2, 'festamazreku@gmail.com', 'Festa', 'Mazreku', '', 'Festa99!', '', '', '2021-08-01'),
+(4, 3, 'user123@gmail.com', 'Skyler', 'Johnson', 'SkyLerR12', 'skyLeR24!', '', 'src/assets/images/gallery-group-4', '2021-08-15'),
+(5, 3, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', '', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
+(6, 3, 'bernardnekk@gmail.com', 'Bernard', 'Nekken', 'BernyBoi99', 'BernardNekk1999', '', 'src/assets/images/gallery-group-5.jpg', '2021-08-05'),
+(7, 3, 'universalplayer@hotmail.com', 'Jack', 'Sparrow', 'UniversalGamer', 'universe19293', '', 'src/assets/images/post-7-mid-square.jpg', '2021-08-10'),
+(8, 3, 'ardamazrekuupwork@gmail.com', 'Angela', 'Martins', 'angela_m', 'Angela12', 'Angela12', 'src/assets/images/avatar-2.jpg', '2021-09-10'),
+(9, 3, 'gerardplayer@gmail.com', 'Gerard', 'Michael', 'gmichael99', 'Gerard99', 'Gerard99', 'src/assets/images/avatar-1.jpg', '2021-09-11');
 
 -- --------------------------------------------------------
 
