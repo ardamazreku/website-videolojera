@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Sep 11, 2021 at 12:16 PM
+-- Generation Time: Sep 11, 2021 at 01:08 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.21
 
@@ -240,7 +240,7 @@ INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname
 (5, 3, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', '', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
 (6, 3, 'bernardnekk@gmail.com', 'Bernard', 'Nekken', 'BernyBoi99', 'BernardNekk1999', '', 'src/assets/images/gallery-group-5.jpg', '2021-08-05'),
 (7, 3, 'universalplayer@hotmail.com', 'Jack', 'Sparrow', 'UniversalGamer', 'universe19293', '', 'src/assets/images/post-7-mid-square.jpg', '2021-08-10'),
-(8, 3, 'ardamazrekuupwork@gmail.com', 'Angela', 'Martins', 'angela_m', 'Angela12', 'Angela12', 'src/assets/images/avatar-2.jpg', '2021-09-10'),
+(8, 3, 'angelamartins@gmail.com', 'Angela', 'Martins', 'angela_m', 'Angela12', 'Angela12', 'src/assets/images/avatar-2.jpg', '2021-09-10'),
 (9, 3, 'gerardplayer@gmail.com', 'Gerard', 'Michael', 'gmichael99', 'Gerard99', 'Gerard99', 'src/assets/images/avatar-1.jpg', '2021-09-11');
 
 -- --------------------------------------------------------
@@ -264,6 +264,23 @@ INSERT INTO `roli` (`id`, `roli`) VALUES
 (1, 'admin'),
 (2, 'mirembajtese'),
 (3, 'perdorues');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `store`
+--
+
+DROP TABLE IF EXISTS `store`;
+CREATE TABLE IF NOT EXISTS `store` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emri` varchar(50) NOT NULL,
+  `permbajtja` longtext NOT NULL,
+  `cmimi` varchar(30) NOT NULL,
+  `kategoria` varchar(30) NOT NULL,
+  `data` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

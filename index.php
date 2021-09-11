@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,12 +150,12 @@ session_start();
     <div class="nk-gap-2"></div>
     <div class="row vertical-gap">
         <div class="col-lg-8">
-
-            <!-- START: Latest Posts -->
-            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Latest</span> Forum Posts</span></h3>
-            <div class="nk-gap"></div>
+            <!-- START: Latest Forum Posts -->
             <div class="nk-blog-grid">
                 <div class="row">
+                    <?php
+                        if(isset($_SESSION['email'])) {
+                    ?>
                     <?php
                         require "database/connect.php";
                         $conn = $connect->prepare("SELECT * FROM forum WHERE id = 2");
@@ -165,6 +164,7 @@ session_start();
 
                         while($row = $res->fetch_assoc()):
                     ?>
+                    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Latest</span> Forum Posts</span></h3>
                     <div class="col-md-12 col-lg-12">
                         <!-- START: Post -->
                         <div class="nk-blog-post">
@@ -186,6 +186,9 @@ session_start();
                         <!-- END: Post -->
                     </div>
                     <?php endwhile;?>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <!-- END: Latest Posts -->
@@ -342,7 +345,8 @@ session_start();
 </div>
 
 <div class="nk-gap-4"></div>
-    <?php include"src/components/footer.php"; ?>
+
+<?php include"src/components/footer.php"; ?>
 </div>
 
 <!-- START: Page Background -->

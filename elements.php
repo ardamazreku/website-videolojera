@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-    
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -973,33 +971,6 @@
         <!-- END: Info Boxes -->
 
         <div class="nk-gap-2"></div>
-        <h3><span class="text-main-1">Audio</span> Player</h3>
-        <div class="nk-gap"></div>
-        <!-- START: Plain Audio -->
-        <div class="nk-audio-plain" data-src="src/assets/mp3/OctoSound-sport.mp3">
-            <div class="nk-audio-plain-title">
-                <strong>OctoSound</strong> - Sport
-                <div class="nk-audio-progress">
-                    <div class="nk-audio-progress-current"></div>
-                </div>
-            </div>
-            <div class="nk-audio-plain-duration">
-                05:34
-            </div>
-        </div>
-        <div class="nk-gap-1"></div>
-        <div class="nk-audio-plain" data-src="src/assets/mp3/soundroll-total-overdrive.mp3">
-            <div class="nk-audio-plain-title">
-                <strong>soundroll</strong> - Total Overdrive
-                <div class="nk-audio-progress">
-                    <div class="nk-audio-progress-current"></div>
-                </div>
-            </div>
-            <div class="nk-audio-plain-duration">
-                03:59
-            </div>
-        </div>
-        <!-- END: Plain Audio  -->
 
         <!-- START: Forms -->
         <div class="nk-gap-2"></div>
@@ -1258,12 +1229,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="nk-widget">
-                    <h4 class="nk-widget-title"><span class="text-main-1">In</span> Twitter</h4>
-                    <div class="nk-widget-content">
-                        <div class="nk-twitter-list" data-twitter-count="1"></div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="nk-gap-3"></div>
@@ -1411,9 +1376,6 @@
 </div>
 <!-- END: Login Modal -->
 
-    
-
-    
 <!-- START: Scripts -->
 
 <!-- Object Fit Polyfill -->
@@ -1477,7 +1439,5 @@
 <script src="src/assets/js/goodgames-init.js"></script>
 <!-- END: Scripts -->
 
-
-    
 </body>
 </html>
