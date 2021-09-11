@@ -16,6 +16,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="src/assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/assets/vendor/bootstrap/dist/css/bootstrap-grid.min.css">
     <!-- FontAwesome -->
     <script defer src="src/assets/vendor/fontawesome-free/js/all.js"></script>
     <script defer src="src/assets/vendor/fontawesome-free/js/v4-shims.js"></script>

@@ -57,17 +57,17 @@
                         </div>
                     </div>
                 </div>
-                <!-- TWITTER PART -->
             </div>
         </div>
         <div class="nk-gap-3"></div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- START: Bottom Footer -->
     <div class="nk-copyright">
         <div class="container">
             <div class="nk-copyright-left">
-                <p> Designed by: <a href="https://www.github.com/ardamazreku">Arda Mazreku</a></p>
+                <p> Designed by: <a href="https://www.github.com/ardamazreku"> Arda Mazreku</a>.
+                Copyright &copy; 2021. All rights reserved.</p>
             </div>
             <div class="nk-copyright-right">
                 <ul class="nk-social-links-2">
@@ -80,4 +80,4 @@
         </div>
     </div>
 </footer>
-<!-- END: Footer -->
+<!-- END: Bottom Footer -->

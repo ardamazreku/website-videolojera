@@ -299,11 +299,10 @@ session_start();
 <div class="nk-gap-2"></div>
     <?php include "src/components/footer.php";?>
 </div>
-        <!-- START: Page Background -->
 
-    <img class="nk-page-background-top" src="src/assets/images/bg-top-3.png" alt="">
+<!-- START: Page Background -->
+    <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
-
 <!-- END: Page Background -->
 
 <!-- START: Scripts -->
@@ -368,8 +367,5 @@ session_start();
 <script src="src/assets/js/goodgames.min.js"></script>
 <script src="src/assets/js/goodgames-init.js"></script>
 <!-- END: Scripts -->
-
-
-    
 </body>
 </html>
