@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Sep 11, 2021 at 01:08 PM
+-- Generation Time: Sep 12, 2021 at 05:20 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.21
 
@@ -279,8 +279,21 @@ CREATE TABLE IF NOT EXISTS `store` (
   `cmimi` varchar(30) NOT NULL,
   `kategoria` varchar(30) NOT NULL,
   `data` date NOT NULL,
+  `foto` varchar(50) NOT NULL,
+  `kategoriaelojes` varchar(30) NOT NULL,
+  `link` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `store`
+--
+
+INSERT INTO `store` (`id`, `emri`, `permbajtja`, `cmimi`, `kategoria`, `data`, `foto`, `kategoriaelojes`, `link`) VALUES
+(1, 'Tales of Arise', 'Explore a world that feels alive:\r\nExplore the world of Dahna, where a mix of unique, natural environments change in appearance based on the time of day. Climb over the rocky terrain, swim in rivers, gather around the campfire, cook food, head to the next town, defeat the master of an alien planet, and liberate the people!', '59,99', 'Anime', '2021-09-10', 'src/assets/images/talesofarise.jpg', 'best_selling', 'https://store.steampowered.com/app/740130/Tales_of_Arise/'),
+(2, 'NBA 2K22', 'NBA 2K22 puts the entire basketball universe in your hands. PLAY NOW in real NBA and WNBA environments against authentic teams and players. Build your own dream team in MyTEAM with today\'s stars and yesterday\'s legends. Live out your own pro journey in MyCAREER and experience your personal rise to the NBA. Flex your management skills as a powerful Executive in MyGM and MyLEAGUE. Anyone, anywhere can hoop in NBA 2K22.', '59,99', 'Sports', '2021-09-10', 'src/assets/images/nba.jpg', 'featured_games', 'https://store.steampowered.com/app/1644960/NBA_2K22/'),
+(3, 'Red Dead Redemption 2', 'Now featuring additional Story Mode content and a fully-featured Photo Mode, Red Dead Redemption 2 also includes free access to the shared living world of Red Dead Online, where players take on an array of roles to carve their own unique path on the frontier as they track wanted criminals as a Bounty Hunter, create a business as a Trader, unearth exotic treasures as a Collector or run an underground distillery as a Moonshiner and much more.', '40,19', 'Action', '2019-12-05', 'src/assets/images/redemption.jpg', 'featured_games', 'https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/'),
+(4, 'Counter-Strike: Global Offensive', '\"Counter-Strike took the gaming industry by surprise when the unlikely MOD became the most played online PC action game in the world almost immediately after its release in August 1999,\" said Doug Lombardi at Valve. \"For the past 12 years, it has continued to be one of the most-played games in the world, headline competitive gaming tournaments and selling over 25 million units worldwide across the franchise. CS: GO promises to expand on CS\' award-winning gameplay and deliver it to gamers on the PC as well as the next gen consoles and the Mac.\"', 'Free', 'FPS', '2012-08-21', 'src/assets/images/csgo.jpg', 'free_games', 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
