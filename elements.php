@@ -45,9 +45,6 @@
     <!-- GoodGames -->
     <link rel="stylesheet" href="src/assets/css/app.css">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="src/assets/css/custom.css">
-    
     <!-- END: Styles -->
 
     <!-- jQuery -->
@@ -494,12 +491,9 @@
             <div class="col-lg-7">
                 <h3 class="text-main-1">Tabs</h3>
                 <div class="nk-gap"></div>
+
                 <!-- START: Tabs  -->
                 <div class="nk-tabs">
-                    <!--
-                        Additional Classes:
-                            .nav-tabs-fill
-                    -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" href="#tabs-1-1" role="tab" data-toggle="tab">Tab 1</a>

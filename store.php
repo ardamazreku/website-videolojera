@@ -45,9 +45,7 @@ if(isset($_SESSION['email'])) {
 <div class="container">
     <ul class="nk-breadcrumbs">
         <li><a href="index.php">Home</a></li>
-        
         <li><span class="fa fa-angle-right"></span></li>
-        
         <li><span>Store</span></li>
     </ul>
 </div>
@@ -90,361 +88,139 @@ if(isset($_SESSION['email'])) {
     </div>
     <!-- END: Categories -->
 
-    <!-- START: Top 10 Best Sellers -->
     <div class="nk-gap-3"></div>
+
+    <!-- START: Top 10 Best Sellers -->
     <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Top 10</span> Best Sellers</span></h3>
     <div class="nk-gap"></div>
     <div class="nk-carousel nk-carousel-x4" data-autoplay="5000" data-dots="false" data-cell-align="left" data-arrows="true">
         <div class="nk-carousel-inner">
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-1-xs.jpg" alt="So saying he unbuckled">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">So saying he unbuckled</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 23.00</div>
+            <?php
+                require "database/connect.php";
+                $conn = $connect->prepare("SELECT * FROM store WHERE kategoriaelojes = 'best_selling';");
+                $conn->execute();
+                $res = $conn->get_result();
+
+                while($row = $res->fetch_assoc()):
+            ?>
+                <div>
+                    <div class="pl-5 pr-5">
+                        <div class="nk-product-cat-3">
+                            <a class="nk-product-image" href="<?= $row['link']?>" target="_blank">
+                                <img src="<?= $row['foto']?>" alt="">
+                            </a>
+                            <div class="nk-product-cont">
+                                <div class="nk-gap-1"></div>
+                                <h3 class="nk-product-title h5">
+                                    <a href="store-product.php"><?= $row['emri']?></a>
+                                </h3>
+                                <div class="nk-gap-1"></div>
+                                <div class="nk-product-price"><?= $row['cmimi']?> €</div>
+                                <div class="nk-gap-1"></div>
+                                <a href="<?= $row['link']?>" target="_blank" class="nk-btn nk-btn-color-primary">
+                                    <span class="nk-btn-effect-bg"></span>BUY ON STEAM
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-2-xs.jpg" alt="However, I have reason">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">However, I have reason</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 32.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-3-xs.jpg" alt="It was some time before">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">It was some time before</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 14.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-4-xs.jpg" alt="She was bouncing">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">She was bouncing</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 20.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-5-xs.jpg" alt="In all revolutions of">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">In all revolutions of</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 23.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-6-xs.jpg" alt="Just then her head ">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">Just then her head </a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 32.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-7-xs.jpg" alt="With what mingled joy">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">With what mingled joy</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 14.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-8-xs.jpg" alt="She was bouncing away">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">She was bouncing away</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 20.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-9-xs.jpg" alt="The word was">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">The word was</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 23.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
-            
-            <div><div class="pl-5 pr-5">
-                <div class="nk-product-cat-3">
-                    <a class="nk-product-image" href="store-product.php">
-                        <img src="src/assets/images/product-10-xs.jpg" alt="My mother was so much">
-                    </a>
-                    <div class="nk-product-cont">
-                        <div class="nk-gap-1"></div>
-                        <h3 class="nk-product-title h5"><a href="store-product.php">My mother was so much</a></h3>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-product-price">€ 32.00</div>
-                    </div>
-                </div>
-            </div></div>
-            
+            <?php endwhile;?>
         </div>
     </div>
     <!-- END: Top 10 Best Sellers -->
 
-    <!-- START: Featured Games -->
     <div class="nk-gap-3"></div>
+
+    <!-- START: Featured Games -->
     <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Featured</span> Games</span></h3>
     <div class="nk-gap"></div>
     <div class="row vertical-gap">
-        
-        
+        <?php
+            require "database/connect.php";
+            $conn = $connect->prepare("SELECT * FROM store WHERE kategoriaelojes = 'featured_games';");
+            $conn->execute();
+            $res = $conn->get_result();
+
+            while($row = $res->fetch_assoc()):
+        ?>
         <div class="col-lg-6">
             <div class="nk-product-cat-2">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-7-md.jpg" alt="With what mingled joy">
+                <a class="nk-product-image" href="<?= $row['link']?>" target="_blank">
+                    <img src="<?= $row['foto']?>" alt="">
                 </a>
                 <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">With what mingled joy</a></h3>
+                    <h3 class="nk-product-title h5">
+                        <a href="<?= $row['link']?>" target="_blank"><?= $row['emri']?></a>
+                    </h3>
                     <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="3.5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i> <i class="far fa-star"></i></div>
+                    <div class="nk-product-rating" data-rating="5">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
                     <div class="nk-gap-1"></div>
-                    She clutched the matron by the arm, and forcing her into a chair by the bedside, was about to speak, when looking round, she caught sight of the two old women
-                    <div class="nk-gap-2"></div>
-                    <div class="nk-product-price">€ 14.00</div>
+                    <div class="nk-post-categories" style="float:left">
+                        <span class="bg-main-1"><?= $row['kategoria']?></span>
+                    </div>
+                    <div class="nk-gap-3"></div>
+                    <p><?= $row['permbajtja']?></p>
+                    <div class="nk-product-price">
+                        <?= $row['cmimi']?> €
+                    </div>
                     <div class="nk-gap-1"></div>
-                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Add to Cart</a>
+                    <a href="<?= $row['link']?>" target="_blank" class="nk-btn nk-btn-color-primary">
+                        <span class="nk-btn-effect-bg"></span>BUY ON STEAM
+                    </a>
                 </div>
             </div>
         </div>
-        
-        
-        <div class="col-lg-6">
-            <div class="nk-product-cat-2">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-8-md.jpg" alt="She was bouncing away">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">She was bouncing away</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="4.5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i></div>
-                    <div class="nk-gap-1"></div>
-                    For good, too; though, in consequence of my previous emotions, I was still occasionally seized with a stormy sob. After we had jogged on for some little time
-                    <div class="nk-gap-2"></div>
-                    <div class="nk-product-price">€ 20.00</div>
-                    <div class="nk-gap-1"></div>
-                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="col-lg-6">
-            <div class="nk-product-cat-2">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-9-md.jpg" alt="The word was">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">The word was</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
-                    <div class="nk-gap-1"></div>
-                    With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alone
-                    <div class="nk-gap-2"></div>
-                    <div class="nk-product-price">€ 23.00</div>
-                    <div class="nk-gap-1"></div>
-                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="col-lg-6">
-            <div class="nk-product-cat-2">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-10-md.jpg" alt="My mother was so much">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">My mother was so much</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="3.5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i> <i class="far fa-star"></i></div>
-                    <div class="nk-gap-1"></div>
-                    A hundred thousand grateful loves to your dear papa and mamma . Is your poor brother recovered of his rack - punch ? Oh, dear!Oh, dear!How men should beware of wicked
-                    <div class="nk-gap-2"></div>
-                    <div class="nk-product-price">€ 32.00</div>
-                    <div class="nk-gap-1"></div>
-                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-        
+        <?php endwhile;?>
     </div>
     <!-- END: Featured Games -->
 
-    <!-- START: Most Popular -->
+    <!-- START: Most Popular Free -->
     <div class="nk-gap-3"></div>
-    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Most</span> Popular</span></h3>
+    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">TOP</span> Free Games </span></h3>
     <div class="nk-gap"></div>
     <div class="row vertical-gap">
-        
-        
-        <div class="col-lg-4 col-md-6">
-            <div class="nk-product-cat">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-11-xs.jpg" alt="She gave my mother">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">She gave my mother</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="3"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-price">€ 14.00</div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="col-lg-4 col-md-6">
-            <div class="nk-product-cat">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-12-xs.jpg" alt="A hundred thousand">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">A hundred thousand</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="4.5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i></div>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-price">€ 20.00</div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="col-lg-4 col-md-6">
-            <div class="nk-product-cat">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-13-xs.jpg" alt="So saying he unbuckled">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">So saying he unbuckled</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-price">€ 23.00</div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="col-lg-4 col-md-6">
-            <div class="nk-product-cat">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-14-xs.jpg" alt="However, I have reason">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">However, I have reason</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="1.5"> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-price">€ 32.00</div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="col-lg-4 col-md-6">
-            <div class="nk-product-cat">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-15-xs.jpg" alt="At first, for some time">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">At first, for some time</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="4"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="far fa-star"></i></div>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-price">€ 14.00</div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="col-lg-4 col-md-6">
-            <div class="nk-product-cat">
-                <a class="nk-product-image" href="store-product.php">
-                    <img src="src/assets/images/product-16-xs.jpg" alt="When the last &#39;natural&#39;">
-                </a>
-                <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.php">When the last &#39;natural&#39;</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="4.5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i></div>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-price">€ 20.00</div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    <!-- END: Most Popular -->
-</div>
+        <?php
+            require "database/connect.php";
+            $conn = $connect->prepare("SELECT * FROM store WHERE kategoriaelojes = 'free_games';");
+            $conn->execute();
+            $res = $conn->get_result();
 
+            while($row = $res->fetch_assoc()):
+        ?>
+        <div class="col-lg-4 col-md-6">
+            <div class="nk-product-cat">
+                <a class="nk-product-image" style="width:50%" href="<?= $row['link']?>" target="_blank">
+                    <img src="<?= $row['foto']?>" alt="">
+                </a>
+                <div class="nk-product-cont">
+                    <h3 class="nk-product-title h5">
+                        <a href="<?= $row['link']?>" target="_blank"><?= $row['emri']?></a>
+                    </h3>
+                    <div class="nk-gap-1"></div>
+                    <div class="nk-post-categories" style="float:left">
+                        <span class="bg-main-1"><?= $row['kategoria']?></span>
+                    </div>
+                    <div class="nk-gap-3"></div>
+                    <div class="nk-product-price">
+                        <span class="text-main-1"><?= $row['cmimi']?></span>
+                    </div>
+                    <div class="nk-gap-1"></div>
+                    <a href="<?= $row['link']?>" target="_blank" class="nk-btn nk-btn-color-primary">
+                        <span class="nk-btn-effect-bg"></span> DOWNLOAD
+                    </a>
+                </div>
+            </div>
+        </div>
+        <?php endwhile; ?>
+    </div>
+    <!-- END: Most Popular Free -->
+</div>
 <div class="nk-gap-2"></div>
 <?php include"src/components/footer.php"; ?>
 </div>
