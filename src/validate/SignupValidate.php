@@ -103,7 +103,7 @@ else {
         //ne rastin tone do te bejme nje insertim
         $querysql = "INSERT INTO perdoruesi
 			(id,roli_id,email,emri,mbiemri,nickname,password,confirmpass,foto,data_regj)
-			VALUES (NULL,3,'$email','$emri','$mbiemri','$nickname','$pass','$confirmpass','src/assets/images/$foto','$data');";
+			VALUES (NULL,2,'$email','$emri','$mbiemri','$nickname','$pass','$confirmpass','src/assets/images/$foto','$data');";
 
         //funksioni ne vazhdim perdoret per te ekzekutuar deklarata te shumta te sql query ne mysql
         if (mysqli_multi_query($connect, $querysql)) {

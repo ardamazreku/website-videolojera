@@ -32,7 +32,7 @@
                 else {
                     if(isset($_SESSION['roli_id'])) {
                         //perdorues
-                        if ($_SESSION['roli_id'] == 3) {
+                        if ($_SESSION['roli_id'] == 2) {
                             echo '
                                 <li>
                                     <a href="forum-topics.php"> Forum </a>
@@ -41,13 +41,12 @@
                                     <a href="store.php"> Store </a>
                                 </li>';
                         }
-                        //mirembajtese
-                        else if ($_SESSION['roli_id'] == 2) {
-
-                        }
                         //admin
                         else if ($_SESSION['roli_id'] == 1) {
-
+                            echo '
+                                <li>
+                                    <a href="admin/login.php"> Admin Panel </a>
+                                </li>';
                         }
                     }
                         echo '<li><a href = "src/validate/logOut.php">Log Out</a></li>';
