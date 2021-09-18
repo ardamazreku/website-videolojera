@@ -1,2 +1,4 @@
 
 database/connect.php
+src/validate/loginValidate.php
+src/validate/SignUpValidate.php
