@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Sep 21, 2021 at 01:13 PM
+-- Generation Time: Sep 21, 2021 at 08:09 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.21
 
@@ -233,8 +233,8 @@ CREATE TABLE IF NOT EXISTS `perdoruesi` (
 --
 
 INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname`, `password`, `confirmpass`, `foto`, `data_regj`) VALUES
-(1, 1, 'ardamazreku99@gmail.com', 'Arda', 'Mazreku', '', 'Arda123!', '', 'src/assets/images/avatar-3.jpg', '2021-07-01'),
-(2, 1, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina123!', '', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
+(1, 1, 'ardamazreku99@gmail.com', 'Arda', 'Mazreku', '', 'Arda99!', '', 'src/assets/images/avatar-3.jpg', '2021-07-01'),
+(2, 1, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina99!', '', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
 (3, 1, 'festamazreku@gmail.com', 'Festa', 'Mazreku', '', 'Festa99!', '', '', '2021-08-01'),
 (4, 2, 'user123@gmail.com', 'Skyler', 'Johnson', 'SkyLerR12', 'skyLeR24!', '', 'src/assets/images/gallery-group-4', '2021-08-15'),
 (5, 2, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', '', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
@@ -254,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `roli` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `roli` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `roli`

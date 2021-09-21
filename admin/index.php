@@ -355,7 +355,7 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-    <?php
+<?php
 }
 //nese perdoruesi nuk eshte admin ridrejtoje ne faqen baze pas kyqjes
 else {
