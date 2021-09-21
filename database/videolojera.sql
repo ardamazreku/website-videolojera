@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Sep 12, 2021 at 05:20 PM
+-- Generation Time: Sep 21, 2021 at 01:13 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.21
 
@@ -234,14 +234,14 @@ CREATE TABLE IF NOT EXISTS `perdoruesi` (
 
 INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname`, `password`, `confirmpass`, `foto`, `data_regj`) VALUES
 (1, 1, 'ardamazreku99@gmail.com', 'Arda', 'Mazreku', '', 'Arda123!', '', 'src/assets/images/avatar-3.jpg', '2021-07-01'),
-(2, 2, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina123!', '', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
-(3, 2, 'festamazreku@gmail.com', 'Festa', 'Mazreku', '', 'Festa99!', '', '', '2021-08-01'),
-(4, 3, 'user123@gmail.com', 'Skyler', 'Johnson', 'SkyLerR12', 'skyLeR24!', '', 'src/assets/images/gallery-group-4', '2021-08-15'),
-(5, 3, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', '', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
-(6, 3, 'bernardnekk@gmail.com', 'Bernard', 'Nekken', 'BernyBoi99', 'BernardNekk1999', '', 'src/assets/images/gallery-group-5.jpg', '2021-08-05'),
-(7, 3, 'universalplayer@hotmail.com', 'Jack', 'Sparrow', 'UniversalGamer', 'universe19293', '', 'src/assets/images/post-7-mid-square.jpg', '2021-08-10'),
-(8, 3, 'angelamartins@gmail.com', 'Angela', 'Martins', 'angela_m', 'Angela12', 'Angela12', 'src/assets/images/avatar-2.jpg', '2021-09-10'),
-(9, 3, 'gerardplayer@gmail.com', 'Gerard', 'Michael', 'gmichael99', 'Gerard99', 'Gerard99', 'src/assets/images/avatar-1.jpg', '2021-09-11');
+(2, 1, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina123!', '', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
+(3, 1, 'festamazreku@gmail.com', 'Festa', 'Mazreku', '', 'Festa99!', '', '', '2021-08-01'),
+(4, 2, 'user123@gmail.com', 'Skyler', 'Johnson', 'SkyLerR12', 'skyLeR24!', '', 'src/assets/images/gallery-group-4', '2021-08-15'),
+(5, 2, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', '', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
+(6, 2, 'bernardnekk@gmail.com', 'Bernard', 'Nekken', 'BernyBoi99', 'BernardNekk1999', '', 'src/assets/images/gallery-group-5.jpg', '2021-08-05'),
+(7, 2, 'universalplayer@hotmail.com', 'Jack', 'Sparrow', 'UniversalGamer', 'universe19293', '', 'src/assets/images/post-7-mid-square.jpg', '2021-08-10'),
+(8, 2, 'angelamartins@gmail.com', 'Angela', 'Martins', 'angela_m', 'Angela12', 'Angela12', 'src/assets/images/avatar-2.jpg', '2021-09-10'),
+(9, 2, 'gerardplayer@gmail.com', 'Gerard', 'Michael', 'gmichael99', 'Gerard99', 'Gerard99', 'src/assets/images/avatar-1.jpg', '2021-09-11');
 
 -- --------------------------------------------------------
 
@@ -262,8 +262,7 @@ CREATE TABLE IF NOT EXISTS `roli` (
 
 INSERT INTO `roli` (`id`, `roli`) VALUES
 (1, 'admin'),
-(2, 'mirembajtese'),
-(3, 'perdorues');
+(2, 'perdorues');
 
 -- --------------------------------------------------------
 
