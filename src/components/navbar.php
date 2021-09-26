@@ -3,9 +3,17 @@
     <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
         <div class="container">
             <div class="nk-nav-table">
-                <a href="index.php" class="nk-nav-logo">
-                    <img src="src/assets/images/logo.png" alt="SteCord" width="90">
-                </a>
+                    <?php
+                        require "database/connect.php";
+                        $stmt = $connect->prepare("SELECT * FROM webapp;");
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        while($row = $result->fetch_assoc()):
+                    ?>
+                    <a href="index.php" class="nk-nav-logo">
+                        <img src="<?= $row['logo']?>" alt="SteCord" width="90">
+                    </a>
+                    <?php endwhile; ?>
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
                     <li>
                         <a href="index.php"> Home </a>

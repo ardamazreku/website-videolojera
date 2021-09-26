@@ -7,15 +7,9 @@ $pass = $_POST['password'];
 $confirmpass = $_POST['confirmpass'];
 $data  = date('Y-m-d',strtotime('now'));
 
+require "../database/connect.php";
+
 $register = true;
-
-//konektimi me db
-$server = 'localhost:3307';
-$user = 'root';
-$password = '';
-$dbName = 'videolojera';
-
-$connect = mysqli_connect($server,$user,$password,$dbName);
 
 $queryEmail = mysqli_query($connect, "SELECT email FROM perdoruesi WHERE email='$email';");
 $countEmail = @mysqli_num_rows($queryEmail);
@@ -101,8 +95,8 @@ else {
 
         //ne rastin tone do te bejme nje insertim
         $querysql = "INSERT INTO perdoruesi
-			(id,roli_id,email,emri,mbiemri,nickname,password,confirmpass,foto,data_regj)
-			VALUES (NULL,1,'$email','$emri','$mbiemri','$nickname','$pass','$confirmpass','src/assets/images/$foto','$data');";
+			(id,roli_id,email,emri,mbiemri,nickname,password,foto,data_regj)
+			VALUES (NULL,1,'$email','$emri','$mbiemri','$nickname','$pass','src/assets/images/$foto','$data');";
 
         //funksioni ne vazhdim perdoret per te ekzekutuar deklarata te shumta te sql query ne mysql
         if (mysqli_multi_query($connect, $querysql)) {

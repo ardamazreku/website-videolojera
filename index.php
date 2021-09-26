@@ -4,13 +4,20 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+        require "database/connect.php";
+        $stmt = $connect->prepare("SELECT * FROM webapp;");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while($row = $result->fetch_assoc()):
+    ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> SteCord | Community and More </title>
+    <title><?= $row['titulli'] ?></title>
     <meta name="description" content="SteCord - Gaming community and store">
     <meta name="keywords" content="game, gaming, Bootstrap, premium">
     <meta name="author" content="Arda Mazreku">
-    <link rel="icon" type="image/png" href="public/favicon.png">
+    <link rel="icon" type="image/png" href="<?= $row['favicon'] ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
@@ -35,6 +42,7 @@ session_start();
     <link rel="stylesheet" href="src/assets/css/app.css">
     <!-- jQuery -->
     <script src="src/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <?php endwhile; ?>
 </head>
 <body>
 <?php include "src/components/navbar.php";?>

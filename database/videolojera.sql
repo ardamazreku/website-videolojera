@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Sep 21, 2021 at 08:09 PM
+-- Generation Time: Sep 26, 2021 at 07:25 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.21
 
@@ -221,7 +221,6 @@ CREATE TABLE IF NOT EXISTS `perdoruesi` (
   `mbiemri` varchar(30) NOT NULL,
   `nickname` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `confirmpass` varchar(30) NOT NULL,
   `foto` varchar(100) NOT NULL,
   `data_regj` date NOT NULL,
   PRIMARY KEY (`id`),
@@ -232,16 +231,16 @@ CREATE TABLE IF NOT EXISTS `perdoruesi` (
 -- Dumping data for table `perdoruesi`
 --
 
-INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname`, `password`, `confirmpass`, `foto`, `data_regj`) VALUES
-(1, 1, 'ardamazreku99@gmail.com', 'Arda', 'Mazreku', '', 'Arda99!', '', 'src/assets/images/avatar-3.jpg', '2021-07-01'),
-(2, 1, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina99!', '', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
-(3, 1, 'festamazreku@gmail.com', 'Festa', 'Mazreku', '', 'Festa99!', '', '', '2021-08-01'),
-(4, 2, 'user123@gmail.com', 'Skyler', 'Johnson', 'SkyLerR12', 'skyLeR24!', '', 'src/assets/images/gallery-group-4', '2021-08-15'),
-(5, 2, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', '', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
-(6, 2, 'bernardnekk@gmail.com', 'Bernard', 'Nekken', 'BernyBoi99', 'BernardNekk1999', '', 'src/assets/images/gallery-group-5.jpg', '2021-08-05'),
-(7, 2, 'universalplayer@hotmail.com', 'Jack', 'Sparrow', 'UniversalGamer', 'universe19293', '', 'src/assets/images/post-7-mid-square.jpg', '2021-08-10'),
-(8, 2, 'angelamartins@gmail.com', 'Angela', 'Martins', 'angela_m', 'Angela12', 'Angela12', 'src/assets/images/avatar-2.jpg', '2021-09-10'),
-(9, 2, 'gerardplayer@gmail.com', 'Gerard', 'Michael', 'gmichael99', 'Gerard99', 'Gerard99', 'src/assets/images/avatar-1.jpg', '2021-09-11');
+INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname`, `password`, `foto`, `data_regj`) VALUES
+(1, 1, 'ardamazreku99@gmail.com', 'Arda', 'Mazreku', '', 'Arda99!', 'src/assets/images/avatar-3.jpg', '2021-07-01'),
+(2, 1, 'dafinaveseli@gmail.com', 'Dafina ', 'Veseli', '', 'Dafina99!', 'src/assets/images/avatar-2.jpg', '2021-08-01'),
+(3, 1, 'festamazreku@gmail.com', 'Festa', 'Mazreku', '', 'Festa99!', '', '2021-08-01'),
+(4, 2, 'user123@gmail.com', 'Skyler', 'Johnson', 'SkyLerR12', 'skyLeR24!', 'src/assets/images/gallery-group-4', '2021-08-15'),
+(5, 2, 'adriangaming@hotmail.com', 'Adrian', 'Gaming', 'adDriAnN', 'adDriAnN123', 'src/assets/images/gallery-9-thumb', '2021-08-24'),
+(6, 2, 'bernardnekk@gmail.com', 'Bernard', 'Nekken', 'BernyBoi99', 'BernardNekk1999', 'src/assets/images/gallery-group-5.jpg', '2021-08-05'),
+(7, 2, 'universalplayer@hotmail.com', 'Jack', 'Sparrow', 'UniversalGamer', 'universe19293', 'src/assets/images/post-7-mid-square.jpg', '2021-08-10'),
+(8, 2, 'angelamartins@gmail.com', 'Angela', 'Martins', 'angela_m', 'Angela12', 'src/assets/images/avatar-2.jpg', '2021-09-10'),
+(9, 2, 'gerardplayer@gmail.com', 'Gerard', 'Michael', 'gmichael99', 'Gerard99', 'src/assets/images/avatar-1.jpg', '2021-09-11');
 
 -- --------------------------------------------------------
 
@@ -251,10 +250,10 @@ INSERT INTO `perdoruesi` (`id`, `roli_id`, `email`, `emri`, `mbiemri`, `nickname
 
 DROP TABLE IF EXISTS `roli`;
 CREATE TABLE IF NOT EXISTS `roli` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `roli` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `roli`
@@ -293,6 +292,28 @@ INSERT INTO `store` (`id`, `emri`, `permbajtja`, `cmimi`, `kategoria`, `data`, `
 (2, 'NBA 2K22', 'NBA 2K22 puts the entire basketball universe in your hands. PLAY NOW in real NBA and WNBA environments against authentic teams and players. Build your own dream team in MyTEAM with today\'s stars and yesterday\'s legends. Live out your own pro journey in MyCAREER and experience your personal rise to the NBA. Flex your management skills as a powerful Executive in MyGM and MyLEAGUE. Anyone, anywhere can hoop in NBA 2K22.', '59,99', 'Sports', '2021-09-10', 'src/assets/images/nba.jpg', 'featured_games', 'https://store.steampowered.com/app/1644960/NBA_2K22/'),
 (3, 'Red Dead Redemption 2', 'Now featuring additional Story Mode content and a fully-featured Photo Mode, Red Dead Redemption 2 also includes free access to the shared living world of Red Dead Online, where players take on an array of roles to carve their own unique path on the frontier as they track wanted criminals as a Bounty Hunter, create a business as a Trader, unearth exotic treasures as a Collector or run an underground distillery as a Moonshiner and much more.', '40,19', 'Action', '2019-12-05', 'src/assets/images/redemption.jpg', 'featured_games', 'https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/'),
 (4, 'Counter-Strike: Global Offensive', '\"Counter-Strike took the gaming industry by surprise when the unlikely MOD became the most played online PC action game in the world almost immediately after its release in August 1999,\" said Doug Lombardi at Valve. \"For the past 12 years, it has continued to be one of the most-played games in the world, headline competitive gaming tournaments and selling over 25 million units worldwide across the franchise. CS: GO promises to expand on CS\' award-winning gameplay and deliver it to gamers on the PC as well as the next gen consoles and the Mac.\"', 'Free', 'FPS', '2012-08-21', 'src/assets/images/csgo.jpg', 'free_games', 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webapp`
+--
+
+DROP TABLE IF EXISTS `webapp`;
+CREATE TABLE IF NOT EXISTS `webapp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulli` varchar(30) NOT NULL,
+  `logo` varchar(50) NOT NULL,
+  `favicon` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `webapp`
+--
+
+INSERT INTO `webapp` (`id`, `titulli`, `logo`, `favicon`) VALUES
+(1, 'SteCord', 'src/assets/images/newlogo.png', 'public/favicon.png');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

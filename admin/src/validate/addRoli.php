@@ -3,12 +3,7 @@
 $id = $_POST['id'];
 $roli = $_POST['roli'];
 
-$server = 'localhost:3307';
-$user = 'root';
-$password = '';
-$dbName = 'videolojera';
-
-$connect = mysqli_connect($server,$user,$password,$dbName);
+require "../database/connect.php";
 
 $addRoli = true;
 

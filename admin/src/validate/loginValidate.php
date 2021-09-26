@@ -6,17 +6,9 @@
 $email = $_POST['email'];
 $pass = $_POST['password'];
 
+require "../database/connect.php";
+
 $login = true;
-
-//konektimi me db
-$server = 'localhost:3307';
-$user = 'root';
-$password = '';
-$dbName = 'videolojera';
-
-$connect = mysqli_connect($server,$user,$password,$dbName);
-
-//validimi i te dhenave hyrese
 
 //nese asnjera nga fushat nuk eshte plotesuar
 if(empty($email) && empty($pass)) {

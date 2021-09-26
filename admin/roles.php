@@ -45,7 +45,7 @@ if($_SESSION['roli_id'] == 1) {
                                             $id = $roli = "";
                                             $errorID = $errorRoli = $errorGen = "";
                                             if($_SERVER['REQUEST_METHOD'] == 'POST') {
-                                                include 'src/validate/roli.php';
+                                                include 'src/validate/addRoli.php';
                                             }
                                         ?>
                                         <form accept-charset="utf-8" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">

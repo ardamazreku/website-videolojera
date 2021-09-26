@@ -23,33 +23,49 @@ if(isset($_SESSION['email'])) {
             <?php include 'src/components/navbarProfile.php'?>
             <div class="content">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">Password Reset</div>
-                                <div class="card-body">
-                                    <h5 class="card-title"> Reset your password </h5>
-                                    <form accept-charset="utf-8">
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-2 form-label" for="email">Current Password</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" name="currentPassword" placeholder="Current Password" class="form-control">
-                                                <small class="form-text"> Type your current password. </small>
-                                            </div>
+                    <div class="page-title">
+                        <h3>Page Settings</h3>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="general-tab" data-bs-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">General</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
+                                    <?php
+                                        $titulli = $logo = $favicon = $errorGen = "";
+                                        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                            include 'src/validate/updateSettings.php';
+                                        }
+                                    ?>
+                                    <div class="col-md-6">
+                                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                                        <p class="text-muted">General settings such as, site title, site description, address and so on.</p>
+                                        <div class="mb-3">
+                                            <label for="site-title" class="form-label">Site Title</label>
+                                            <input type="text" name="titulli" class="form-control" value="<?php echo $titulli;?>" required>
                                         </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-2 form-label" for="password">New Password</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" name="password" placeholder="New Password" class="form-control">
-                                                <small class="form-text"> Type your new password. </small>
-                                            </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Site Logo</label>
+                                            <input class="form-control" name="logo" type="file" id="formFile1" value="<?php echo $logo;?>" required>
+                                            <small class="text-muted">The image must have a maximum size of 1MB</small>
                                         </div>
-                                        <div class="mb-3 row">
-                                            <div class="col-sm-10 offset-sm-2">
-                                                <input type="submit" class="btn btn-primary">
-                                            </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Favicon</label>
+                                            <input class="form-control" name="favicon" type="file" id="formFile2" value="<?php echo $favicon;?>" required>
+                                            <small class="text-muted">The image must have a maximum size of 1MB</small>
+                                        </div>
+                                        <div class="mb-3">
+                                            <?php echo "<span style='color: red;'>$errorGen<span>";?>
+                                        </div>
+                                        <div class="mb-3 text-end">
+                                            <button class="btn btn-success" type="submit"><i class="fas fa-check"></i> Save</button>
                                         </div>
                                     </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

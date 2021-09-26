@@ -4,13 +4,7 @@ $pass = $_POST['currentPassword'];
 $newPass = $_POST['newPassword'];
 $email = $_SESSION['email'];
 
-//konektimi me db
-$server = 'localhost:3307';
-$user = 'root';
-$password = '';
-$dbName = 'videolojera';
-
-$connect = mysqli_connect($server,$user,$password,$dbName);
+require "../database/connect.php";
 
 $passUpdate = true;
 
@@ -51,7 +45,6 @@ else {
 
     if($passUpdate == true) {
 
-        //ne rastin tone do te bejme nje insertim
         $querysql = "UPDATE perdoruesi 
                      SET password='$newPass' WHERE email='$email';";
 
@@ -64,7 +57,7 @@ else {
         }
         else {
             echo '<script type="text/javascript">';
-            echo 'alert("Something went wrong! Pass:")';
+            echo 'alert("Something went wrong!")';
             echo '</script>';
         }
     }
