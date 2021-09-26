@@ -58,8 +58,7 @@ if($_SESSION['roli_id'] == 1) {
                                         <td><?= $row['roli_id'] ?></td>
                                         <td>Active</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="src/validate/deleteUserDB.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>

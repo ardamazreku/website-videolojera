@@ -34,9 +34,7 @@ else {
         $querysql = "INSERT INTO roli(id,roli) VALUES('$id','$roli');";
 
         if (mysqli_multi_query($connect, $querysql)) {
-            echo '<script type="text/javascript">';
-            echo 'alert("Role added successfully!")';
-            echo '</script>';
+            echo'<script> location.replace("roles.php"); </script>';
         }
         else {
             echo '<script type="text/javascript">';
