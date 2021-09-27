@@ -26,7 +26,7 @@ else {
     }
 
     if(empty($roli)) {
-        $errorRoli = "Roli field is required!";
+        $errorRoli = "Role field is required!";
         $addRoli = false;
     }
 

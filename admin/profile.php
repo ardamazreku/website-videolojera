@@ -30,7 +30,6 @@ if(isset($_SESSION['email'])) {
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
                             <h5 class="card-title"> Personal Information </h5>
-                            <form accept-charset="utf-8">
                             <?php
                                 require "../database/connect.php";
                                 $stmt = $connect->prepare("SELECT * FROM perdoruesi WHERE email='$email'");
@@ -38,34 +37,36 @@ if(isset($_SESSION['email'])) {
                                 $result = $stmt->get_result();
                                 while($row = $result->fetch_assoc()):
                             ?>
+                            <form accept-charset="utf-8" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                                <?php
+                                    $emri = $mbiemri = $email = "";
+                                    $errorPass = $errorConfirmPass = $errorGen = $errorPassTooltip = "";
+                                    $pass = $newPass = "";
+                                    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                        include 'src/validate/passUpdate.php';
+                                    }
+                                ?>
                                 <div class="mb-3 row">
                                     <label class="col-sm-2 form-label" for="email">Your email</label>
                                     <div class="col-sm-10">
-                                        <input type="email" name="email" placeholder="<?= $row['email'] ?>" class="form-control bg-light">
+                                        <input type="text" name="email" value="<?= $row['email'] ?>" class="form-control" readonly>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label class="col-sm-2 col-lg-2 form-label" for="password">Your name</label>
+                                    <label class="col-sm-2 col-lg-2 form-label" for="password">Your name<span style="color:red">*</span></label>
                                     <div class="col-sm-10 col-lg-5">
-                                        <input type="text" name="emri" value ="<?= $row['emri'] ?>" class="form-control">
+                                        <input type="text" name="emri" value ="<?php echo $emri;?>"
+                                        placeholder="<?= $row['emri'] ?>" class="form-control">
                                     </div>
                                     <div class="col-sm-10 col-lg-5">
-                                        <input type="text" name="mbiemri" value ="<?= $row['mbiemri'] ?>" class="form-control">
+                                        <input type="text" name="mbiemri" value ="<?php echo $mbiemri;?>"
+                                        placeholder="<?= $row['mbiemri'] ?>" class="form-control">
                                     </div>
                                 </div>
-                            </form>
-                            <?php endwhile; ?>
-                            <h5 class="card-title"> Reset your password </h5>
-                            <?php
-                                $errorPass = $errorConfirmPass = $errorGen = $errorPassTooltip = "";
-                                $pass = $newPass = "";
-                                if($_SERVER['REQUEST_METHOD'] == 'POST') {
-                                    include 'src/validate/passUpdate.php';
-                                }
-                            ?>
-                            <form accept-charset="utf-8" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                                <div><br/></div>
+                                <h5 class="card-title"> Reset your password </h5>
                                 <div class="mb-3 row">
-                                    <label class="col-sm-2 form-label" for="email">Current Password</label>
+                                    <label class="col-sm-2 form-label" for="email">Current Password<span style="color:red">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="password" name="currentPassword" placeholder="Current Password" value="<?php echo $pass;?>" class="form-control">
                                         <small class="form-text"> Type your current password. </small>
@@ -74,7 +75,7 @@ if(isset($_SESSION['email'])) {
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label class="col-sm-2 form-label" for="password">New Password</label>
+                                    <label class="col-sm-2 form-label" for="password">New Password<span style="color:red">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="password" name="newPassword" placeholder="New Password" value="<?php echo $newPass;?>" class="form-control">
                                         <small class="form-text"> Type your new password. </small>
@@ -86,10 +87,11 @@ if(isset($_SESSION['email'])) {
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-sm-10 offset-sm-2">
-                                        <input type="submit" class="btn btn-primary" value="Reset Password">
+                                        <input type="submit" class="btn btn-primary" value="Update Profile">
                                     </div>
                                 </div>
                             </form>
+                            <?php endwhile; ?>
                         </div>
                     </div>
                 </div>

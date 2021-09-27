@@ -1,5 +1,7 @@
 <?php
 
+$emri = $_POST['emri'];
+$mbiemri = $_POST['mbiemri'];
 $pass = $_POST['currentPassword'];
 $newPass = $_POST['newPassword'];
 $email = $_SESSION['email'];
@@ -11,7 +13,7 @@ $passUpdate = true;
 $queryEmail = mysqli_query($connect, "SELECT email FROM perdoruesi WHERE email='$email';");
 $countEmail = @mysqli_num_rows($queryEmail);
 
-if(empty($pass) && empty($newPass)) {
+if(empty($pass) && empty($newPass) && empty($emri) && empty($mbiemri)) {
     $errorGen = "Fields are required!";
     $passUpdate = false;
 }
@@ -43,17 +45,22 @@ else {
         $passUpdate=false;
     }
 
+    if(empty($emri) && empty($mbiemri)) {
+        $errorGen = "Name & Surname are required fields!";
+        $passUpdate = false;
+    }
+
     if($passUpdate == true) {
 
         $querysql = "UPDATE perdoruesi 
-                     SET password='$newPass' WHERE email='$email';";
+                     SET password='$newPass', emri='$emri', mbiemri='$mbiemri' WHERE email='$email';";
 
         //funksioni ne vazhdim perdoret per te ekzekutuar deklarata te shumta te sql query ne mysql
         if (mysqli_multi_query($connect, $querysql)) {
             echo '<script type="text/javascript">';
-            echo 'alert("Password updated successfully!")';
+            echo 'alert("Profile updated successfully!")';
             echo '</script>';
-            echo'<script> location.replace("login.php"); </script>';
+            echo'<script> location.replace("profile.php"); </script>';
         }
         else {
             echo '<script type="text/javascript">';
