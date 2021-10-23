@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+if(isset($_SESSION['email'])) {
+$email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,45 +82,39 @@ session_start();
         <div class="nk-gap-2"></div>
 
         <!-- START: Forums List -->
-        <ul class="nk-forum nk-forum-topic">
-            <li>
-                <?php
-                    require "database/connect.php";
-                    $conn = $connect->prepare("SELECT * FROM forum WHERE id = 1");
-                    $conn->execute();
-                    $res = $conn->get_result();
+        <div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+            <ul class="nk-forum nk-forum-topic">
+                <li>
+                    <?php
+                        require "database/connect.php";
+                        $conn = $connect->prepare("SELECT * FROM forum WHERE id = 1");
+                        $conn->execute();
+                        $res = $conn->get_result();
 
-                    while($row = $res->fetch_assoc()):
-                ?>
-                <div class="nk-forum-topic-author">
-                    <a href="#">
-                        <img src="<?= $row['profile_pic']?>">
-                    </a>
-                    <div class="nk-forum-topic-author-name">
-                        <a href="#"><?= $row['emri']?></a>
+                        while($row = $res->fetch_assoc()):
+                    ?>
+                    <div class="nk-forum-topic-author">
+                        <a href="#">
+                            <img src="<?= $row['profile_pic']?>">
+                        </a>
+                        <div class="nk-forum-topic-author-name">
+                            <a href="#"><?= $row['emri']?></a>
+                        </div>
+                        <div class="nk-forum-topic-author-since">
+                            Member since <?= $row['data_regjistrim']?>
+                        </div>
                     </div>
-                    <div class="nk-forum-topic-author-since">
-                        Member since <?= $row['data_regjistrim']?>
+                    <div class="nk-forum-topic-content col-sm-12 col-md-12">
+                        <p><?= $row['permbajtja']?></p>
                     </div>
-                </div>
-                <div class="nk-forum-topic-content col-sm-12 col-md-12">
-                    <p><?= $row['permbajtja']?></p>
-                </div>
-                <div class="nk-forum-topic-footer">
-                    <span class="nk-forum-topic-date"><?= $row['data_postim']?></span>
-
-                    <span class="nk-forum-action-btn">
-                        <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                    </span>
-                    <span class="nk-forum-action-btn">
-                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                    </span>
-                </div>
-                <!-- END: Forum Post -->
-                <?php endwhile;?>
-            </li>
-            <!--START: Forum Post Replies -->
-            <li>
+                    <div class="nk-forum-topic-footer">
+                        <span class="nk-forum-topic-date"><?= $row['data_postim']?></span>
+                    </div>
+                    <!-- END: Forum Post -->
+                    <?php endwhile;?>
+                </li>
+                <!--START: Forum Post Replies -->
                 <?php
                     require "database/connect.php";
                     $conn = $connect->prepare("SELECT * FROM forum_comments WHERE forum_id = 1");
@@ -126,54 +123,61 @@ session_start();
 
                     while($row = $res->fetch_assoc()):
                 ?>
-                <div class="nk-forum-topic-author">
-                    <a href="#">
-                        <img src="<?= $row['perdoruesi_foto']?>">
-                    </a>
-                    <div class="nk-forum-topic-author-name">
-                        <a href="#"><?= $row['perdoruesi_emri']?></a>
+                <li>
+                    <div class="nk-forum-topic-author">
+                        <a href="#">
+                            <img src="<?= $row['perdoruesi_foto']?>">
+                        </a>
+                        <div class="nk-forum-topic-author-name">
+                            <a href="#"><?= $row['perdoruesi_emri']?></a>
+                        </div>
+                        <div class="nk-forum-topic-author-since">
+                            Member since <?= $row['data_regj']?>
+                        </div>
                     </div>
-                    <div class="nk-forum-topic-author-since">
-                        Member since <?= $row['data_regj']?>
+                    <div class="nk-forum-topic-content col-sm-12 col-md-12">
+                        <p><?= $row['permbajtja']?></p>
                     </div>
-                </div>
-                <div class="nk-forum-topic-content col-sm-12 col-md-12">
-                    <p><?= $row['permbajtja']?></p>
-                <div class="nk-forum-topic-footer">
-                    <span class="nk-forum-topic-date"><?= $row['data']?></span>
-
-                    <span class="nk-forum-action-btn">
-                        <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                    </span>
-                    <span class="nk-forum-action-btn">
-                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                    </span>
-                </div>
+                    <div class="nk-forum-topic-footer">
+                        <span class="nk-forum-topic-date"><?= $row['data']?></span>
+                    </div>
+                </li>
                 <?php endwhile;?>
-            </li>
-        </ul>
+            </ul>
+        </div>
+        </div>
         <!-- END: Forums List -->
 
         <div class="nk-gap-2"></div>
         <div id="forum-reply"></div>
         <div class="nk-gap-4"></div>
         <!-- START: Reply -->
-        <form action="#" novalidate>
-            <h3 class="h4">Reply</h3>
-            <div class="nk-gap-1"></div>
-            <textarea name="reply" cols="30" rows="10" class="nk-summernote form-control"></textarea>
-            <div class="nk-gap-1"></div>
-            <button href="#" class="nk-btn nk-btn-rounded nk-btn-color-white">Reply</button>
-        </form>
+        <?php
+            $komenti = $errorKoment = "";
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                //POST
+                include 'src/validate/komentUpload.php';
+            }
+        ?>
+        <div>
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                <h3 class="h4">Reply</h3>
+                <div class="nk-gap-1"></div>
+                <textarea name="komenti" cols="30" rows="10" class="nk-summernote form-control"><?php echo $komenti; ?></textarea>
+                <?php echo "<span class='error'>$errorKoment<span>";?>
+                <div class="nk-gap-1"></div>
+                <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white">Reply</button>
+            </form>
+        </div>
         <!-- END: Reply -->
     </div>
 
     <div class="nk-gap-2"></div>
     <?php include "src/components/footer.php";?>
-    </div>
+</div>
 
 <!-- START: Page Background -->
-
     <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
 <!-- END: Page Background -->
@@ -182,3 +186,9 @@ session_start();
 
 </body>
 </html>
+<?php
+}
+else {
+    echo'<script> location.replace("login.php"); </script>';
+}
+?>

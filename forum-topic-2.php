@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+if(isset($_SESSION['email'])) {
+$email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,26 +110,20 @@ session_start();
                         </div>
                         <div class="nk-forum-topic-footer">
                             <span class="nk-forum-topic-date"><?= $row['data_postim']?></span>
-                            <span class="nk-forum-action-btn">
-                                <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                            </span>
-                            <span class="nk-forum-action-btn">
-                                <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                            </span>
                         </div>
                         <!-- END: Forum Post -->
                     <?php endwhile;?>
                 </li>
                 <!--START: Forum Post Replies -->
-                <li>
-                    <?php
-                        require "database/connect.php";
-                        $conn = $connect->prepare("SELECT * FROM forum_comments WHERE forum_id = 3");
-                        $conn->execute();
-                        $res = $conn->get_result();
+                <?php
+                    require "database/connect.php";
+                    $conn = $connect->prepare("SELECT * FROM forum_comments WHERE forum_id = 3");
+                    $conn->execute();
+                    $res = $conn->get_result();
 
-                        while($row = $res->fetch_assoc()):
-                    ?>
+                    while($row = $res->fetch_assoc()):
+                ?>
+                <li>
                     <div class="nk-forum-topic-author">
                         <a href="#">
                             <img src="<?= $row['perdoruesi_foto']?>">
@@ -143,15 +140,9 @@ session_start();
                     </div>
                     <div class="nk-forum-topic-footer">
                         <span class="nk-forum-topic-date"><?= $row['data']?></span>
-                        <span class="nk-forum-action-btn">
-                            <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                        </span>
-                        <span class="nk-forum-action-btn">
-                            <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                        </span>
                     </div>
-                    <?php endwhile;?>
                 </li>
+                <?php endwhile;?>
             </ul>
         </div>
         </div>
@@ -161,13 +152,24 @@ session_start();
         <div id="forum-reply"></div>
         <div class="nk-gap-4"></div>
         <!-- START: Reply -->
-        <form action="#" novalidate>
-            <h3 class="h4">Reply</h3>
-            <div class="nk-gap-1"></div>
-            <textarea name="reply" cols="30" rows="10" class="nk-summernote form-control"></textarea>
-            <div class="nk-gap-1"></div>
-            <button href="#" class="nk-btn nk-btn-rounded nk-btn-color-white">Reply</button>
-        </form>
+        <?php
+            $komenti = $errorKoment = "";
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                //POST
+                include 'src/validate/komentUpload.php';
+            }
+        ?>
+        <div>
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                <h3 class="h4">Reply</h3>
+                <div class="nk-gap-1"></div>
+                <textarea name="komenti" cols="30" rows="10" class="nk-summernote form-control"><?php echo $komenti; ?></textarea>
+                <?php echo "<span class='error'>$errorKoment<span>";?>
+                <div class="nk-gap-1"></div>
+                <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white">Reply</button>
+            </form>
+        </div>
         <!-- END: Reply -->
     </div>
 
@@ -185,3 +187,9 @@ session_start();
 
 </body>
 </html>
+<?php
+}
+else {
+    echo'<script> location.replace("login.php"); </script>';
+}
+?>
