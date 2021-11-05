@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(isset($_SESSION['email'])) {
+$email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,29 +140,23 @@ session_start();
                 </div>
                 <!-- END: Comments -->
 
-                <!-- START: Reply -->
+                <!-- START: Leave a Reply -->
                 <div class="nk-gap-2"></div>
                 <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Leave</span> a Reply</span></h3>
                 <div class="nk-gap"></div>
                 <div class="nk-reply">
-                    <form action="#" class="nk-form" novalidate="novalidate">
-                        <div class="row sm-gap vertical-gap">
-                            <div class="col-md-4">
-                                <input type="email" class="form-control required" name="email" placeholder="Email *">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control required" name="name" placeholder="Name *">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" name="name" placeholder="Website">
-                            </div>
-                        </div>
+                    <?php
+                        $komenti = $errorKoment = "";
+
+                        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            include 'src/validate/komentBlog.php';
+                        }
+                    ?>
+                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="nk-form" method="POST">
+                        <textarea class="form-control required" name="komenti" rows="5" placeholder="Comment *"><?php echo $komenti; ?></textarea>
                         <div class="nk-gap-1"></div>
-                        <textarea class="form-control required" name="message" rows="5" placeholder="Message *" aria-required="true"></textarea>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-form-response-success"></div>
-                        <div class="nk-form-response-error"></div>
-                        <button class="nk-btn nk-btn-rounded nk-btn-color-main-1">Post Comment</button>
+                        <?php echo "<span class='error'>$errorKoment</span>";?>
+                        <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Post</button>
                     </form>
                 </div>
                 <!-- END: Reply -->
@@ -180,3 +176,9 @@ session_start();
 <?php include"scripts.php";?>
 </body>
 </html>
+<?php
+}
+else {
+    echo'<script> location.replace("login.php"); </script>';
+}
+?>

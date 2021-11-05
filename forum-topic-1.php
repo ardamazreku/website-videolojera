@@ -170,7 +170,7 @@ $email = $_SESSION['email'];
                 <h3 class="h4">Reply</h3>
                 <div class="nk-gap-1"></div>
                 <textarea name="komenti" cols="30" rows="10" class="nk-summernote form-control"><?php echo $komenti; ?></textarea>
-                <?php echo "<span class='error'>$errorKoment<span>";?>
+                <?php echo "<span class='error'>$errorKoment</span>";?>
                 <div class="nk-gap-1"></div>
                 <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white">Reply</button>
             </form>
