@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,15 +58,15 @@ session_start();
         
     </ul>
 </div>
-<div class="nk-gap-1"></div>
 <!-- END: Breadcrumbs -->
 
-    <div class="container">
+<div class="nk-gap-1"></div>
 
+    <div class="container">
         <!-- START: Pagination -->
         <div class="row justify-content-end">
             <div class="col-md-3 text-right">
-                <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white">New Topic</a>
+                <a href="newtopic.php" class="nk-btn nk-btn-rounded nk-btn-color-white">New Topic</a>
             </div>
         </div>
         <!-- END: Pagination -->
@@ -89,7 +88,7 @@ session_start();
                 </div>
                 <div class="nk-forum-title">
                     <h3><a href="<?= $row['file']?>"><?= $row['titulli']?></a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#"><?= $row['emri']?></a>
+                    <div class="nk-forum-title-sub">Started by <a href="#<?= $row['emri']?>"><?= $row['emri']?></a>
                     <i class="fas fa-check-circle"></i> on <?= $row['data_postim']?></div>
                 </div>
             </li>
