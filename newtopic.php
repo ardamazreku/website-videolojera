@@ -46,7 +46,6 @@ $email = $_SESSION['email'];
     <div class="nk-gap-1"></div>
     <div class="container">
         <ul class="nk-breadcrumbs">
-
             <li><a href="index.php">Home</a></li>
 
             <li><span class="fa fa-angle-right"></span></li>
@@ -56,7 +55,6 @@ $email = $_SESSION['email'];
             <li><span class="fa fa-angle-right"></span></li>
 
             <li><span>Create a new topic</span></li>
-
         </ul>
     </div>
     <!-- END: Breadcrumbs -->
@@ -74,19 +72,17 @@ $email = $_SESSION['email'];
                         ?>
                         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                             <h4 class="nk-widget-title"><span class="text-main-1">FORUM</span> TITLE</h4>
-                            <input type="text" placeholder="Title" class="form-control bg-dark" name="titulli" value="<?php echo $titulli; ?>" /><br>
+                            <input type="text" placeholder="Title" class="form-control bg-dark" name="titulli" value="<?php echo $titulli; ?>" required/><br>
                             <h4 class="nk-widget-title"><span class="text-main-1">FORUM</span> SUMMARY</h4>
                             <textarea class="form-control bg-dark required" name="permbajtja" rows="5" placeholder="Summary"><?php echo $permbajtja; ?></textarea>
                             <div class="nk-gap-1"></div>
                             <?php echo "<span class='error'>$error</span>";?>
                             <div class="mb-3">
                               <label for="formFile" class="form-label">Upload a file (not required)</label>
-                              <input class="form-control bg-dark" type="file" id="formFile" name="file" value="<?php echo $file; ?>">
+                              <input class="form-control bg-dark" type="file" id="formFile" name="attachment" value="<?php echo $file; ?>">
                             </div>
                             <div class="nk-gap-1"></div>
-                            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white">
-                                <span>Post</span>
-                            </button>
+                            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white">Post</button>
                         </form>
                     </div>
                 </div>
@@ -94,15 +90,12 @@ $email = $_SESSION['email'];
         </div>
 </div>
 <div class="nk-gap-2"></div>
-<?php include "src/components/footer.php";?>
 </div>
 
 <!-- START: Page Background -->
     <img class="nk-page-background-top" src="src/assets/images/bg-top-5.png" alt="">
     <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
 <!-- END: Page Background -->
-
-<?php include "scripts.php";?>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 $titulli = $_POST['titulli'];
 $permbajtja = $_POST['permbajtja'];
-$file = $_POST['file'];
+$file = $_POST['attachment'];
 $email = $_SESSION['email'];
 
 $data  = date('Y-m-d',strtotime('now'));
@@ -27,22 +27,23 @@ else {
         $perdoruesi_foto = $query3Row['foto'];
         $data_regj = $query3Row['data_regj'];
 
-         $_SESSION['id'] = $perdoruesi_id;
-         $_SESSION['nickname'] = $perdoruesi_emri;
-         $_SESSION['foto'] = $perdoruesi_foto;
-         $_SESSION['data_regj'] =  $data_regj;
+        $_SESSION['id'] = $perdoruesi_id;
+        $_SESSION['nickname'] = $perdoruesi_emri;
+        $_SESSION['foto'] = $perdoruesi_foto;
+        $_SESSION['data_regj'] =  $data_regj;
 
          $querysql = "INSERT INTO forum(id,roli_id,perdoruesi_id,email,emri,profile_pic,data_regjistrim,data_postim,titulli,permbajtja,attachment,file)
-            VALUES (NULL,2,'$perdoruesi_id','$email','$perdoruesi_emri','$perdoruesi_foto','$data_regj','$data','$titulli','$permbajtja','src/assets/images/$file',NULL);";
+            VALUES (NULL, 2, '$perdoruesi_id', '$email', '$perdoruesi_emri', '$perdoruesi_foto', '$data_regj', '$data', '$titulli', '$permbajtja', 'src/assets/images/$file', 'forum-topic-1.php');";
 
-        if (mysqli_multi_query($connect, $querysql)) {
-            echo '<script> alert("Reply posted!") </script>';
-        }
-        else {
-            echo '<script type="text/javascript">';
-            echo 'alert("Something went wrong!")';
-            echo '</script>';
-        }
+            if (mysqli_multi_query($connect, $querysql)) {
+                echo '<script> alert("Reply posted!") </script>';
+                echo '<script> location.replace("forum-topics.php"); </script>';
+            }
+            else {
+                echo '<script type="text/javascript">';
+                echo 'alert("Something went wrong!")';
+                echo '</script>';
+            }
     }
 }
 
