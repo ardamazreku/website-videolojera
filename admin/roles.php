@@ -48,7 +48,7 @@ if($_SESSION['roli_id'] == 1) {
                                                 include 'src/validate/addRoli.php';
                                             }
                                         ?>
-                                        <form accept-charset="utf-8" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                                        <form accept-charset="utf-8" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                                             <div class="row g-2">
                                                 <div class="col">
                                                     <label for="name" class="form-label sr-only">ID</label>
@@ -58,7 +58,7 @@ if($_SESSION['roli_id'] == 1) {
                                                 </div>
                                                 <div class="col">
                                                     <label for="username" class="form-label sr-only">Role</label>
-                                                    <input type="text" name="roli" placeholder="Description" class="form-control" value="<?php echo $roli; ?>">
+                                                    <input type="text" name="roli" placeholder="Roli" class="form-control" value="<?php echo $roli; ?>">
                                                     <br />
                                                     <?php echo "<span style='color: red;'>$errorRoli<span>";?>
                                                     <br />
@@ -96,8 +96,9 @@ if($_SESSION['roli_id'] == 1) {
                                     <tr>
                                         <td title="id"><?= $row['id'] ?></td>
                                         <td><?= $row['roli'] ?></td>
+                                        </div>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="updateRoli.php" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
                                             <a href="src/validate/deleteRoliDB.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
