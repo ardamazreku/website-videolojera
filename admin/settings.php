@@ -8,7 +8,7 @@ if(isset($_SESSION['email'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Settings </title>
+    <title> Web Application Settings </title>
     <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
     <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
     <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@ if(isset($_SESSION['email'])) {
             <div class="content">
                 <div class="container">
                     <div class="page-title">
-                        <h3>Page Settings</h3>
+                        <h3>Webapp Settings</h3>
                     </div>
                     <div class="box box-primary">
                         <div class="box-body">

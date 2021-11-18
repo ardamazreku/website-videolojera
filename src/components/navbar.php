@@ -53,7 +53,7 @@
                         else if ($_SESSION['roli_id'] == 1) {
                             echo '
                                 <li>
-                                    <a href="admin/login.php"> Admin Panel </a>
+                                    <a href="admin/login.php" target="_blank"> Admin Panel </a>
                                 </li>';
                         }
                     }
