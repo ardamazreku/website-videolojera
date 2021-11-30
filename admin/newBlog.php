@@ -79,6 +79,7 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 </form>
                                             </div>
                                         </div>
+                                        <?php echo "" ?>
                                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <?php
                                                 $titulli = $permbajtja = $kategoria = $file = "";
@@ -90,19 +91,19 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                                                     <div class="mb-3">
                                                         <label for="site-title" class="form-label">Title</label>
-                                                        <input type="text" name="titulli" class="form-control" value="<?php echo $titulli;?>" required>
+                                                        <input type="text" name="titulli3" class="form-control" value="<?php echo $titulli;?>" required>
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="site-description" class="form-label">Content</label>
-                                                        <textarea cols="30" rows="10" name="permbajtja" class="form-control" required><?php echo $permbajtja;?></textarea>
+                                                        <textarea cols="30" rows="10" name="permbajtja3" class="form-control" required><?php echo $permbajtja;?></textarea>
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="site-description" class="form-label">Category</label>
-                                                        <input type="text" name="kategoria" class="form-control" value="<?php echo $kategoria;?>" required>
+                                                        <input type="text" name="kategoria3" class="form-control" value="<?php echo $kategoria;?>" required>
                                                     </div>
                                                     <div class="mb-3">
                                                       <label for="formFile" class="form-label" required>Upload a photo</label>
-                                                      <input class="form-control" type="file" id="formFile" name="file" value="<?php echo $file; ?>">
+                                                      <input class="form-control" type="file" id="formFile" name="file3" value="<?php echo $file; ?>">
                                                     </div>
                                                     <div class="mb-3 text-end">
                                                         <button class="btn btn-success" type="submit"> Post </button>

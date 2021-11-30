@@ -1,9 +1,9 @@
 <?php
-$titulli = $_POST['titulli'];
-$permbajtja = $_POST['permbajtja'];
+$titulli = $_POST['titulli3'];
+$permbajtja = $_POST['permbajtja3'];
 $email = $_SESSION['email'];
-$file = $_POST['file'];
-$kategoria = $_POST['kategoria'];
+$file = $_POST['file3'];
+$kategoria = $_POST['kategoria3'];
 
 $data  = date('Y-m-d',strtotime('now'));
 require "../database/connect.php";

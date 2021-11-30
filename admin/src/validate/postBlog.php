@@ -33,7 +33,7 @@ else {
 
         if (mysqli_multi_query($connect, $querysql)) {
             echo '<script type="text/javascript">';
-            echo 'alert("Blog article posted successfully!")';
+            echo 'alert("Article posted successfully!")';
             echo '</script>';
             echo'<script> location.replace("newBlog.php"); </script>';
         }
