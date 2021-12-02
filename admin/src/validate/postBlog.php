@@ -35,7 +35,7 @@ else {
             echo '<script type="text/javascript">';
             echo 'alert("Article posted successfully!")';
             echo '</script>';
-            echo'<script> location.replace("newBlog.php"); </script>';
+            echo'<script> window.open("../blog-list.php"); </script>';
         }
         else {
             echo '<script type="text/javascript">';
