@@ -46,7 +46,7 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="game-price" class="form-label">Price</label>
-                                                        <input type="number" name="cmimi" value="<?php echo $cmimi;?>" required>
+                                                        <input type="text" name="cmimi" value="<?php echo $cmimi;?>" required>
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="game-category" class="form-label">Category</label>

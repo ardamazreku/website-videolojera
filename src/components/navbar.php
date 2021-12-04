@@ -22,9 +22,6 @@
                         <a href="blog-list.php"> Blog </a>
                     </li>
                     <li>
-                        <a href="gallery.php"> Gallery </a>
-                    </li>
-                    <li>
                         <a href="news.php"> News </a>
                     </li>
 <?php
@@ -54,6 +51,9 @@
                             echo '
                                 <li>
                                     <a href="admin/login.php" target="_blank"> Admin Panel </a>
+                                </li>
+                                <li>
+                                    <a href="store.php"> Store </a>
                                 </li>';
                         }
                     }
