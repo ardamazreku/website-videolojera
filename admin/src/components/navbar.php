@@ -21,5 +21,8 @@
         <li>
             <a href="newGame.php"><i class="fas fa-gamepad"></i> New game </a>
         </li>
+        <li>
+            <a href="posts.php"><i class="fas fa-file-import"></i> See posts </a>
+        </li>
     </ul>
 </nav>
