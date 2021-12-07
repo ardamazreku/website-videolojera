@@ -28,6 +28,9 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
+                            <div class="page-title">
+                                <h3>New Post</h3>
+                            </div>
                             <div class="card">
                             <div class="card-header">Create a new post</div>
                                 <div class="card-body">

@@ -50,10 +50,13 @@
                         else if ($_SESSION['roli_id'] == 1) {
                             echo '
                                 <li>
-                                    <a href="admin/login.php" target="_blank"> Admin Panel </a>
+                                    <a href="forum-topics.php"> Forum </a>
                                 </li>
                                 <li>
                                     <a href="store.php"> Store </a>
+                                </li>
+                                <li>
+                                    <a href="admin/login.php" target="_blank"> Admin Panel </a>
                                 </li>';
                         }
                     }

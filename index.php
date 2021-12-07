@@ -166,7 +166,7 @@ session_start();
                     ?>
                     <?php
                         require "database/connect.php";
-                        $conn = $connect->prepare("SELECT * FROM forum WHERE id = 2");
+                        $conn = $connect->prepare("SELECT * FROM forum WHERE id = 3");
                         $conn->execute();
                         $res = $conn->get_result();
 

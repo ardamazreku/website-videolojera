@@ -5,14 +5,14 @@
             <h4 class="nk-widget-title"><span><span class="text-main-1">We</span> Are Social</span></h4>
             <div class="nk-widget-content">
                 <ul class="nk-social-links-3 nk-social-links-cols-4">
-                    <li><a class="nk-social-twitch" href="#"><span class="fab fa-twitch"></span></a></li>
-                    <li><a class="nk-social-instagram" href="#"><span class="fab fa-instagram"></span></a></li>
-                    <li><a class="nk-social-facebook" href="#"><span class="fab fa-facebook"></span></a></li>
-                    <li><a class="nk-social-google-plus" href="#"><span class="fab fa-google-plus"></span></a></li>
-                    <li><a class="nk-social-youtube" href="#"><span class="fab fa-youtube"></span></a></li>
-                    <li><a class="nk-social-twitter" href="#" target="_blank"><span class="fab fa-twitter"></span></a></li>
-                    <li><a class="nk-social-pinterest" href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                    <li><a class="nk-social-rss" href="#"><span class="fa fa-rss"></span></a></li>
+                    <li><a class="nk-social-twitch" href="https://www.twitch.com" target="_blank"><span class="fab fa-twitch"></span></a></li>
+                    <li><a class="nk-social-instagram" href="https://www.instagram.com" target="_blank"><span class="fab fa-instagram"></span></a></li>
+                    <li><a class="nk-social-facebook" href="https://www.facebook.com" target="_blank"><span class="fab fa-facebook"></span></a></li>
+                    <li><a class="nk-social-google-plus" href="https://www.google.com" target="_blank"><span class="fab fa-google-plus"></span></a></li>
+                    <li><a class="nk-social-youtube" href="https://www.youtube.com" target="_blank"><span class="fab fa-youtube"></span></a></li>
+                    <li><a class="nk-social-twitter" href="https://www.twitter.com" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                    <li><a class="nk-social-pinterest" href="https://www.pinterest.com" target="_blank"><span class="fab fa-pinterest-p"></span></a></li>
+                    <li><a class="nk-social-rss" href="https://www.rss.com" target="_blank"><span class="fa fa-rss"></span></a></li>
                 </ul>
             </div>
         </div>

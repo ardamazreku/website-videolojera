@@ -26,6 +26,9 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
             <?php include 'src/components/navbarProfile.php'?>
             <div class="content">
                 <div class="container">
+                <div class="page-title">
+                    <h1 class="d-flex justify-content-center">Admin Panel</h1>
+                </div>
                     <a href="../index.php" target="_blank"> Go to Webapp </a>
                 </div>
             </div>

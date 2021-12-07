@@ -28,14 +28,17 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
-                            <?php
-                                $titulli = $permbajtja = $cmimi = $file = $kategoria = $kategoriaelojes = $link = "";
-                                    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-                                        include 'src/validate/postGame.php';
-                                    }
-                            ?>
-                            <div class="col-md-6">
-                                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                            <div class="page-title">
+                                <h3>New Game</h3>
+                            </div>
+                                <?php
+                                    $titulli = $permbajtja = $cmimi = $file = $kategoria = $kategoriaelojes = $link = "";
+                                        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                            include 'src/validate/postGame.php';
+                                        }
+                                ?>
+                                <div class="col-md-6">
+                                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                                                     <div class="mb-3">
                                                         <label for="game-title" class="form-label">Title</label>
                                                         <input type="text" name="titulli" class="form-control" value="<?php echo $titulli;?>" required>
@@ -66,8 +69,8 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <div class="mb-3 text-end">
                                                         <button class="btn btn-success" type="submit"> Post </button>
                                                     </div>
-                                </form>
-                            </div>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </div>
