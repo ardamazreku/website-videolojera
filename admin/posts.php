@@ -164,13 +164,13 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 <div class="col-lg-1">
                                                     <p>ID</p>
                                                 </div>
-                                                <div class="col-lg-1">
+                                                <div class="col-lg-2">
                                                     <p> Name </p>
                                                 </div>
-                                                <div class="col-lg-2">
+                                                <div class="col-lg-3">
                                                     <p> Content </p>
                                                 </div>
-                                                <div class="col-lg-3">
+                                                <div class="col-lg-1">
                                                     <p> Price </p>
                                                 </div>
                                                 <div class="col-lg-2">
@@ -194,13 +194,13 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 <div class="col-lg-1">
                                                     <p><?= $row['id'] ?></p>
                                                 </div>
-                                                <div class="col-lg-1">
+                                                <div class="col-lg-2">
                                                     <p><?= $row['emri'] ?></p>
                                                 </div>
-                                                <div class="col-lg-2">
+                                                <div class="col-lg-3">
                                                     <p><?= $row['permbajtja'] ?></p>
                                                 </div>
-                                                <div class="col-lg-3">
+                                                <div class="col-lg-1">
                                                     <p><?= $row['cmimi'] ?> €</p>
                                                 </div>
                                                 <div class="col-lg-2">
