@@ -33,6 +33,7 @@ else {
         //funksioni ne vazhdim perdoret per te ekzekutuar deklarata te shumta te sql query ne mysql
         if (mysqli_multi_query($connect, $querysql)) {
             echo '<script> alert("Reply posted!") </script>';
+            echo'<script> location.replace("blog-article-1.php"); </script>';
         }
         else {
             echo '<script type="text/javascript">';

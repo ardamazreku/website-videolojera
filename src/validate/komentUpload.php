@@ -29,11 +29,12 @@ else {
         $_SESSION['data_regj'] =  $data_regj;
 
         $querysql = "INSERT INTO forum_comments(id,forum_id,perdoruesi_id,perdoruesi_emri,perdoruesi_foto,data_regj,data,permbajtja)
-            VALUES (NULL,1,'$perdoruesi_id','$perdoruesi_emri','$perdoruesi_foto','$data_regj','$data', '$komenti');";
+            VALUES (NULL,2,'$perdoruesi_id','$perdoruesi_emri','$perdoruesi_foto','$data_regj','$data', '$komenti');";
 
         //funksioni ne vazhdim perdoret per te ekzekutuar deklarata te shumta te sql query ne mysql
         if (mysqli_multi_query($connect, $querysql)) {
             echo '<script> alert("Reply posted!") </script>';
+            echo'<script> location.replace("forum-topic-1.php"); </script>';
         }
         else {
             echo '<script type="text/javascript">';
