@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Dec 07, 2021 at 12:42 PM
+-- Generation Time: Dec 07, 2021 at 01:06 PM
 -- Server version: 10.5.4-MariaDB
 -- PHP Version: 7.3.21
 
@@ -146,19 +146,6 @@ CREATE TABLE IF NOT EXISTS `forum_comments` (
 
 INSERT INTO `forum_comments` (`id`, `forum_id`, `perdoruesi_id`, `perdoruesi_emri`, `perdoruesi_foto`, `data_regj`, `data`, `permbajtja`) VALUES
 (1, 1, 4, 'SkyLerR12', 'src/assets/images/gallery-group-4', '2021-08-15', '2021-08-16', 'Hey Arda! <br> Firstly, I wanted to really appreciate the work here on this website! It\'s absolutely incredible! I am a gamer and this website is everything!!! I LOVE IT SO MUCH! <br>\r\nAs about suggestions, don\'t really think we have much to say? I love everything about the web! <br>\r\nCHEERS!');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `galeria`
---
-
-DROP TABLE IF EXISTS `galeria`;
-CREATE TABLE IF NOT EXISTS `galeria` (
-  `foto` varchar(50) NOT NULL,
-  `titulli` varchar(50) NOT NULL,
-  `permbajtja` varchar(500) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
