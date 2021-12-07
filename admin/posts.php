@@ -41,6 +41,9 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                             <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">News Posts</a>
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" id="forum-tab" data-bs-toggle="tab" href="#forum" role="tab" aria-controls="forum" aria-selected="false">Forum Posts</a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" id="game-tab" data-bs-toggle="tab" href="#game" role="tab" aria-controls="game" aria-selected="false">Games</a>
                                         </li>
                                     </ul>
@@ -154,6 +157,63 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 </div>
                                                 <div class="col-lg-1">
                                                     <a href="src/validate/deleteNews.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                                </div>
+                                            </div>
+                                            <?php endwhile; ?>
+                                        </div>
+
+                                        <div class="tab-pane fade active show" id="forum" role="tabpanel" aria-labelledby="forum-tab">
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <p> ID </p>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <p> Author </p>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <p> Title </p>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <p> Content </p>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <p> Post pic </p>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <p> Date </p>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <p> Delete </p>
+                                                </div>
+                                            </div>
+                                            <?php
+                                                require "../database/connect.php";
+                                                $stmt = $connect->prepare("SELECT * FROM forum");
+                                                $stmt->execute();
+                                                $result = $stmt->get_result();
+                                                while($row = $result->fetch_assoc()):
+                                            ?>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <p><?= $row['id'] ?></p>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <p><?= $row['emri'] ?></p>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <p><?= $row['titulli'] ?></p>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <p><?= $row['permbajtja'] ?></p>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <img src="../<?= $row['attachment'] ?>" style="width:100%; height: auto" />
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <p><?= $row['data_postim'] ?></p>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <a href="src/validate/deleteBlog.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                                 </div>
                                             </div>
                                             <?php endwhile; ?>
