@@ -50,21 +50,20 @@ $email = $_SESSION['email'];
         <li><a href="index.php">Home</a></li>
 
         <li><span class="fa fa-angle-right"></span></li>
-        
+
         <li><a href="blog-list.php">Blog</a></li>
 
         <li><span class="fa fa-angle-right"></span></li>
-
     </ul>
 </div>
 <div class="nk-gap-1"></div>
 <!-- END: Breadcrumbs -->
-    
+
 <div class="container">
     <div class="row vertical-gap">
         <?php
             require "database/connect.php";
-            $conn = $connect->prepare("SELECT * FROM blog WHERE id = 1");
+            $conn = $connect->prepare("SELECT * FROM blog WHERE id = 3");
             $conn->execute();
             $res = $conn->get_result();
 
@@ -76,17 +75,18 @@ $email = $_SESSION['email'];
                 <!-- START: Post Text -->
                 <div class="nk-post-text mt-0">
                     <div class="nk-post-img">
-                        <img src="<?= $row['foto'] ?>" alt="">
+                        <img src="<?= $row['foto'] ?>">
                     </div>
                     <div class="nk-gap-1"></div>
                     <h1 class="nk-post-title h4"><?= $row['titulli'] ?></h1>
                     <div class="nk-post-by">
                         <img src="<?= $row['profile_pic'] ?>" class="rounded-circle" width="35">
                         by <?= $row['autori'] ?> in&nbsp; <span class="fa fa-calendar"></span> &nbsp;<?= $row['data'] ?>
+
                         <div class="nk-post-categories">
                             <span class="bg-main-1"><?= $row['kategoria'] ?></span>
-                            <span class="bg-main-2">Adventure</span>
                         </div>
+
                     </div>
                     <div class="nk-gap"></div>
                     <p><?= $row['permbajtja'] ?></p>
@@ -98,28 +98,17 @@ $email = $_SESSION['email'];
                     <p><?= $row['permbajtja2'] ?></p>
 
                     <div class="nk-gap"></div>
-                    <div class="nk-plain-video" data-video="https://www.youtube.com/watch?v=ohIUD15dypk"></div>
-                    <p>Death Stranding Walkthrough Gameplay Part 1 includes a Review, Prologue and Campaign Mission 1 of the Death Stranding 2019
-                    Single Player Campaign for PS4 Pro and PC at a later date. </p>
                 </div>
                 <!-- END: Post Text -->
 
-                <div class="nk-gap-2"></div>
-
-                <ul class="nk-breadcrumbs">
-                    <li><span class="fa fa-angle-right"></span></li>
-                </ul>
-
-                <div class="nk-gap-2"></div>
-
                 <!-- START: Comments -->
                 <div id="comments"></div>
-                <h3 class="nk-decorated-h-2"><span>Comments</span></h3>
+                <h3 class="nk-decorated-h-2"><span> Comments</span></h3>
                 <div class="nk-gap"></div>
                 <div class="nk-comments">
                     <?php
                         require "database/connect.php";
-                        $conn = $connect->prepare("SELECT * FROM blog_comments WHERE blog_id = 1");
+                        $conn = $connect->prepare("SELECT * FROM blog_comments WHERE blog_id = 3");
                         $conn->execute();
                         $res = $conn->get_result();
 
@@ -132,7 +121,7 @@ $email = $_SESSION['email'];
                             by <a href="#"><?= $row['perdoruesi_emri'] ?></a> in <?= $row['data'] ?>
                         </div>
                         <div class="nk-comment-text">
-                            <p> <?= $row['permbajtja'] ?></p>
+                            <p><?= $row['permbajtja'] ?></p>
                         </div>
                     </div>
                     <?php endwhile; ?>
@@ -147,7 +136,7 @@ $email = $_SESSION['email'];
                 <div class="nk-reply">
                     <?php
                         $komenti = $errorKoment = "";
-                        $blog_id = 1;
+                        $blog_id = 3;
                         if($_SERVER['REQUEST_METHOD'] == 'POST') {
                             include 'src/validate/komentBlog.php';
                         }
@@ -166,21 +155,15 @@ $email = $_SESSION['email'];
         </div>
         <?php endwhile; ?>
 
-    <?php include"src/components/aside.php"; ?>
+    <?php include "src/components/aside.php"; ?>
     </div>
 </div>
 
 <div class="nk-gap-2"></div>
-    <?php include"src/components/footer.php"; ?>
+    <?php include "src/components/footer.php"; ?>
 </div>
 
-<!-- START: Page Background -->
-    <img class="nk-page-background-top" src="src/assets/images/bg-top-5.png" alt="">
-    <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">
-<!-- END: Page Background -->
-
-<?php include "scripts.php";?>
-
+<?php include"scripts.php";?>
 </body>
 </html>
 <?php

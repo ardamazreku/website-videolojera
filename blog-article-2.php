@@ -12,7 +12,7 @@ $email = $_SESSION['email'];
     <meta name="description" content="SteCord - Gaming community and store">
     <meta name="keywords" content="game, gaming, Bootstrap, premium">
     <meta name="author" content="Arda Mazreku">
-    <link rel="icon" type="image/png" href=public/favicon.png">
+    <link rel="icon" type="image/png" href="public/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
@@ -147,7 +147,7 @@ $email = $_SESSION['email'];
                 <div class="nk-reply">
                     <?php
                         $komenti = $errorKoment = "";
-
+                        $blog_id = 2;
                         if($_SERVER['REQUEST_METHOD'] == 'POST') {
                             include 'src/validate/komentBlog.php';
                         }
@@ -156,6 +156,7 @@ $email = $_SESSION['email'];
                         <textarea class="form-control required" name="komenti" rows="5" placeholder="Comment *"><?php echo $komenti; ?></textarea>
                         <div class="nk-gap-1"></div>
                         <?php echo "<span class='error'>$errorKoment</span>";?>
+                        <input type="hidden" name="blog_id" value="<?php echo $blog_id;?>">
                         <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Post</button>
                     </form>
                 </div>

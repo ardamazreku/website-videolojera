@@ -29,7 +29,7 @@ else {
         $_SESSION['foto'] = $perdoruesi_foto;
 
         $querysql = "INSERT INTO blog(id,roli,perdoruesi_id,titulli,titulli2,autori,profile_pic,data,permbajtja,permbajtja2,foto,kategoria,blog_file)
-    VALUES(NULL, 1, '$perdoruesi_id', '$titulli', '$titulli2', '$perdoruesi_emri', '$perdoruesi_foto', '$data', '$permbajtja', '$permbajtja2', 'src/assets/images/$file', '$kategoria', 'blog-article-1.php');";
+    VALUES(NULL, 1, '$perdoruesi_id', '$titulli', '$titulli2', '$perdoruesi_emri', '$perdoruesi_foto', '$data', '$permbajtja', '$permbajtja2', 'src/assets/images/$file', '$kategoria', 'blog-article-3.php');";
 
         if (mysqli_multi_query($connect, $querysql)) {
             echo '<script type="text/javascript">';

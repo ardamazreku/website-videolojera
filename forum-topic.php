@@ -154,7 +154,7 @@ $email = $_SESSION['email'];
         <!-- START: Reply -->
         <?php
             $komenti = $errorKoment = "";
-
+            $forum_id = 1;
             if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //POST
                 include 'src/validate/komentUpload.php';
@@ -166,6 +166,7 @@ $email = $_SESSION['email'];
                 <div class="nk-gap-1"></div>
                 <textarea name="komenti" cols="30" rows="10" class="nk-summernote form-control"><?php echo $komenti; ?></textarea>
                 <?php echo "<span class='error'>$errorKoment</span>";?>
+                <input type="hidden" name="forum_id" value="<?php echo $forum_id;?>">
                 <div class="nk-gap-1"></div>
                 <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white">Reply</button>
             </form>

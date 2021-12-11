@@ -1,6 +1,7 @@
 <?php
 $komenti = $_POST['komenti'];
 $email = $_SESSION['email'];
+$blog_id = $_POST['blog_id'];
 
 $data  = date('Y-m-d',strtotime('now'));
 
@@ -28,12 +29,11 @@ else {
         $_SESSION['foto'] = $perdoruesi_foto;
 
         $querysql = "INSERT INTO blog_comments(id,blog_id,perdoruesi_id,perdoruesi_emri,perdoruesi_foto,data,permbajtja)
-            VALUES (NULL,1,'$perdoruesi_id','$perdoruesi_emri','$perdoruesi_foto', '$data', '$komenti');";
+            VALUES (NULL,'$blog_id','$perdoruesi_id','$perdoruesi_emri','$perdoruesi_foto', '$data', '$komenti');";
 
         //funksioni ne vazhdim perdoret per te ekzekutuar deklarata te shumta te sql query ne mysql
         if (mysqli_multi_query($connect, $querysql)) {
             echo '<script> alert("Reply posted!") </script>';
-            echo'<script> location.replace("blog-article-1.php"); </script>';
         }
         else {
             echo '<script type="text/javascript">';

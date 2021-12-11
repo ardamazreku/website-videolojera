@@ -63,7 +63,7 @@
     <div class="nk-copyright">
         <div class="container">
             <div class="nk-copyright-left">
-                <p> Designed by: <a href="https://www.github.com/ardamazreku"> Arda Mazreku</a>.
+                <p> Designed by: <a href="https://www.github.com/ardamazreku" target="_blank"> Arda Mazreku</a>.
                 <script>
                     const date = new Date();
                     const year = date.getFullYear();

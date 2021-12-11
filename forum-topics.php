@@ -88,7 +88,7 @@ session_start();
                 </div>
                 <div class="nk-forum-title">
                     <h3><a href="<?= $row['file']?>"><?= $row['titulli']?></a></h3>
-                    <div class="nk-forum-title-sub">Started by <a href="#<?= $row['emri']?>"><?= $row['emri']?></a>
+                    <div class="nk-forum-title-sub">Started by <a href="<?= $row['emri']?>"><?= $row['emri']?></a>
                     <i class="fas fa-check-circle"></i> on <?= $row['data_postim']?></div>
                 </div>
             </li>

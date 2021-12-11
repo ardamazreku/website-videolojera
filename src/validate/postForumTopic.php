@@ -33,7 +33,7 @@ else {
         $_SESSION['data_regj'] =  $data_regj;
 
          $querysql = "INSERT INTO forum(id,roli_id,perdoruesi_id,email,emri,profile_pic,data_regjistrim,data_postim,titulli,permbajtja,attachment,file)
-            VALUES (NULL, 2, '$perdoruesi_id', '$email', '$perdoruesi_emri', '$perdoruesi_foto', '$data_regj', '$data', '$titulli', '$permbajtja', 'src/assets/images/$file', 'forum-topic-1.php');";
+            VALUES (NULL, 2, '$perdoruesi_id', '$email', '$perdoruesi_emri', '$perdoruesi_foto', '$data_regj', '$data', '$titulli', '$permbajtja', 'src/assets/images/$file', 'forum-topic-3.php');";
 
             if (mysqli_multi_query($connect, $querysql)) {
                 echo '<script> alert("Reply posted!") </script>';

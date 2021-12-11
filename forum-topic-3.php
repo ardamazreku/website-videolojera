@@ -47,7 +47,7 @@ $email = $_SESSION['email'];
     <div class="container">
         <?php
             require "database/connect.php";
-            $conn = $connect->prepare("SELECT * FROM forum WHERE id = 3");
+            $conn = $connect->prepare("SELECT * FROM forum WHERE id = 4");
             $conn->execute();
             $res = $conn->get_result();
 
@@ -88,7 +88,7 @@ $email = $_SESSION['email'];
                 <li>
                     <?php
                         require "database/connect.php";
-                        $conn = $connect->prepare("SELECT * FROM forum WHERE id = 3");
+                        $conn = $connect->prepare("SELECT * FROM forum WHERE id = 4");
                         $conn->execute();
                         $res = $conn->get_result();
 
@@ -117,7 +117,7 @@ $email = $_SESSION['email'];
                 <!--START: Forum Post Replies -->
                 <?php
                     require "database/connect.php";
-                    $conn = $connect->prepare("SELECT * FROM forum_comments WHERE forum_id = 3");
+                    $conn = $connect->prepare("SELECT * FROM forum_comments WHERE forum_id = 4");
                     $conn->execute();
                     $res = $conn->get_result();
 
@@ -154,7 +154,7 @@ $email = $_SESSION['email'];
         <!-- START: Reply -->
         <?php
             $komenti = $errorKoment = "";
-            $forum_id = 3;
+            $forum_id = 4;
             if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //POST
                 include 'src/validate/komentUpload.php';

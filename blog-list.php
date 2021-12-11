@@ -78,7 +78,7 @@ session_start();
                                     </a>
                                 </div>
                                 <div class="col-md-7 col-lg-6">
-                                    <h2 class="nk-post-title h4"><a href="blog-article.php"><?= $row['titulli']?></a></h2>
+                                    <h2 class="nk-post-title h4"><a href="<?= $row['blog_file']?>"><?= $row['titulli']?></a></h2>
                                     <div class="nk-post-text">
                                         <p><?= $row['permbajtja']?></p>
                                     </div>
