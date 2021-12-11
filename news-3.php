@@ -12,7 +12,7 @@ $email = $_SESSION['email'];
     <meta name="description" content="SteCord - Gaming community and store">
     <meta name="keywords" content="game, gaming, Bootstrap, premium">
     <meta name="author" content="Arda Mazreku">
-    <link rel="icon" type="image/png" href=public/favicon.png">
+    <link rel="icon" type="image/png" href="public/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">

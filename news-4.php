@@ -64,7 +64,7 @@ $email = $_SESSION['email'];
     <div class="row vertical-gap">
         <?php
             require "database/connect.php";
-            $conn = $connect->prepare("SELECT * FROM lajmet WHERE id = 1");
+            $conn = $connect->prepare("SELECT * FROM lajmet WHERE id = 4");
             $conn->execute();
             $res = $conn->get_result();
 
@@ -90,9 +90,6 @@ $email = $_SESSION['email'];
                     <div class="nk-gap"></div>
                     <p><?= $row['permbajtja'] ?></p>
                     <div class="nk-gap"></div>
-                    <div class="nk-plain-video" data-video="https://www.youtube.com/watch?v=OLhxoncGWDA&ab_channel=theRadBrad"></div>
-                    <p>Death Stranding Walkthrough Gameplay Part 1 includes a Review, Prologue and Campaign Mission 1 of the Death Stranding 2019
-                    Single Player Campaign for PS4 Pro and PC at a later date. </p>
                 </div>
                 <!-- END: Post Text -->
                 <div class="nk-gap-2"></div>
