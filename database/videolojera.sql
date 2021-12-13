@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   PRIMARY KEY (`id`),
   KEY `perdoruesi_id` (`perdoruesi_id`),
   KEY `roli_id` (`roli_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forum`
@@ -240,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `roli` (
   `id` int(11) NOT NULL,
   `roli` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `roli`

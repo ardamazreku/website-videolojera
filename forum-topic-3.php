@@ -108,6 +108,10 @@ $email = $_SESSION['email'];
                         <div class="nk-forum-topic-content col-sm-12 col-md-12">
                             <p><?= $row['permbajtja']?></p>
                         </div>
+                        <div class="nk-forum-topic-attachments">
+                            <h4 class="h5">Attachments</h4>
+                            <img src ="<?= $row['attachment']?>" class="nk-post-img" width ="50%">
+                        </div>
                         <div class="nk-forum-topic-footer">
                             <span class="nk-forum-topic-date"><?= $row['data_postim']?></span>
                         </div>

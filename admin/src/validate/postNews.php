@@ -24,7 +24,7 @@ else {
         $_SESSION['nickname'] = $perdoruesi_emri;
 
         $querysql = "INSERT INTO lajmet(id,roli,titulli,autori,data,permbajtja,foto,kategoria,file)
-            VALUES(NULL, 1, '$titulli', '$perdoruesi_emri', '$data', '$permbajtja', 'src/assets/images/$file', '$kategoria', 'blog-article-2.php');";
+            VALUES(NULL, 1, '$titulli', '$perdoruesi_emri', '$data', '$permbajtja', 'src/assets/images/$file', '$kategoria', 'news-1.php');";
 
         if (mysqli_multi_query($connect, $querysql)) {
             echo '<script type="text/javascript">';

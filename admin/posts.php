@@ -216,7 +216,7 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 </div>
                                                 <div class="col-lg-1">
                                                     <a href="updateBlog.php" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                                    <a href="src/validate/deleteBlog.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                                    <a href="src/validate/deleteForum.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                                 </div>
                                             <?php endwhile; ?>
                                             </div>
