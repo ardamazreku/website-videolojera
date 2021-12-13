@@ -55,11 +55,11 @@ if(isset($_SESSION['email'])) {
                                 <div class="mb-3 row">
                                     <label class="col-sm-2 col-lg-2 form-label" for="password">Your name<span style="color:red">*</span></label>
                                     <div class="col-sm-10 col-lg-5">
-                                        <input type="text" name="emri" value ="<?php echo $emri;?>"
+                                        <input type="text" name="emri" value ="<?= $row['emri'] ?>"
                                         placeholder="<?= $row['emri'] ?>" class="form-control">
                                     </div>
                                     <div class="col-sm-10 col-lg-5">
-                                        <input type="text" name="mbiemri" value ="<?php echo $mbiemri;?>"
+                                        <input type="text" name="mbiemri" value ="<?= $row['mbiemri'] ?>"
                                         placeholder="<?= $row['mbiemri'] ?>" class="form-control">
                                     </div>
                                 </div>
