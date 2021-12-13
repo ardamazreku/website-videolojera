@@ -69,9 +69,10 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p> Date </p>
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <p> Delete </p>
+                                                    <p> Edit Delete </p>
                                                 </div>
                                             </div>
+                                            <div class="row">
                                             <?php
                                                 require "../database/connect.php";
                                                 $stmt = $connect->prepare("SELECT * FROM blog");
@@ -79,7 +80,6 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 $result = $stmt->get_result();
                                                 while($row = $result->fetch_assoc()):
                                             ?>
-                                            <div class="row">
                                                 <div class="col-lg-1">
                                                     <p><?= $row['id'] ?></p>
                                                 </div>
@@ -99,10 +99,11 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p><?= $row['data'] ?></p>
                                                 </div>
                                                 <div class="col-lg-1">
+                                                    <a href="updateBlog.php" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
                                                     <a href="src/validate/deleteBlog.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                                 </div>
-                                            </div>
                                             <?php endwhile; ?>
+                                            </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -126,17 +127,17 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p> Date </p>
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <p> Delete </p>
+                                                    <p> Edit Delete </p>
                                                 </div>
                                             </div>
-                                            <?php
+                                            <div class="row">
+                                             <?php
                                                 require "../database/connect.php";
                                                 $stmt = $connect->prepare("SELECT * FROM lajmet");
                                                 $stmt->execute();
                                                 $result = $stmt->get_result();
                                                 while($row = $result->fetch_assoc()):
                                             ?>
-                                            <div class="row">
                                                 <div class="col-lg-1">
                                                     <p><?= $row['id'] ?></p>
                                                 </div>
@@ -156,13 +157,14 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p><?= $row['data'] ?></p>
                                                 </div>
                                                 <div class="col-lg-1">
+                                                    <a href="updateBlog.php" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
                                                     <a href="src/validate/deleteNews.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                                 </div>
-                                            </div>
                                             <?php endwhile; ?>
+                                            </div>
                                         </div>
 
-                                        <div class="tab-pane fade active show" id="forum" role="tabpanel" aria-labelledby="forum-tab">
+                                        <div class="tab-pane fade" id="forum" role="tabpanel" aria-labelledby="forum-tab">
                                             <div class="row">
                                                 <div class="col-lg-1">
                                                     <p> ID </p>
@@ -183,9 +185,10 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p> Date </p>
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <p> Delete </p>
+                                                    <p> Edit Delete </p>
                                                 </div>
                                             </div>
+                                            <div class="row">
                                             <?php
                                                 require "../database/connect.php";
                                                 $stmt = $connect->prepare("SELECT * FROM forum");
@@ -193,7 +196,6 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 $result = $stmt->get_result();
                                                 while($row = $result->fetch_assoc()):
                                             ?>
-                                            <div class="row">
                                                 <div class="col-lg-1">
                                                     <p><?= $row['id'] ?></p>
                                                 </div>
@@ -213,10 +215,11 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p><?= $row['data_postim'] ?></p>
                                                 </div>
                                                 <div class="col-lg-1">
+                                                    <a href="updateBlog.php" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
                                                     <a href="src/validate/deleteBlog.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                                 </div>
-                                            </div>
                                             <?php endwhile; ?>
+                                            </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="game" role="tabpanel" aria-labelledby="game-tab">
@@ -240,9 +243,10 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p> Date </p>
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <p> Delete </p>
+                                                    <p> Edit Delete </p>
                                                 </div>
                                             </div>
+                                            <div class="row">
                                             <?php
                                                 require "../database/connect.php";
                                                 $stmt = $connect->prepare("SELECT * FROM store");
@@ -250,7 +254,6 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                 $result = $stmt->get_result();
                                                 while($row = $result->fetch_assoc()):
                                             ?>
-                                            <div class="row">
                                                 <div class="col-lg-1">
                                                     <p><?= $row['id'] ?></p>
                                                 </div>
@@ -270,10 +273,11 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                                     <p><?= $row['data'] ?></p>
                                                 </div>
                                                 <div class="col-lg-1">
+                                                    <a href="updateBlog.php" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
                                                     <a href="src/validate/deleteGame.php?id=<?=$row['id']?>" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                                 </div>
-                                            </div>
                                             <?php endwhile; ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
