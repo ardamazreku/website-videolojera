@@ -36,7 +36,7 @@ else {
             VALUES (NULL, 2, '$perdoruesi_id', '$email', '$perdoruesi_emri', '$perdoruesi_foto', '$data_regj', '$data', '$titulli', '$permbajtja', 'src/assets/images/$file', 'forum-topic-3.php');";
 
             if (mysqli_multi_query($connect, $querysql)) {
-                echo '<script> alert("Reply posted!") </script>';
+                echo '<script> alert("Forum topic posted successfully!") </script>';
                 echo '<script> location.replace("forum-topics.php"); </script>';
             }
             else {
