@@ -119,9 +119,6 @@ if(!isset($_SESSION['email'])) {
     </div>
 </div>
 
-<div class="nk-gap-4"></div>
-<?php include"src/components/footer.php"; ?>
-
 <!-- START: Page Background -->
 <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">
 <img class="nk-page-background-bottom" src="src/assets/images/bg-bottom.png" alt="">

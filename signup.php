@@ -46,7 +46,7 @@ if(!isset($_SESSION['email'])) {
 
     $email = "";
 
-    $errorGen = $errorEmail =$errorPassword= $errorPassTooltip =$errorEmri = $errorMbiemri = $errorNickname = $errorFoto = $errorConfirmPass = "";
+    $errorGen = $errorEmail = $errorPassword= $errorPassTooltip = $errorEmri = $errorMbiemri = $errorConfirmPass = "";
 
     $email = $pass = $confirmpass = $emri = $mbiemri = $nickname = $foto = $data = "";
 
@@ -78,7 +78,7 @@ if(!isset($_SESSION['email'])) {
                                     <h6 class="mb-0 text-sm"> Name </h6>
                                 </label>
                                 <input class="mb-4" type="text" name="emri" placeholder="Enter your name" value="<?php echo $emri; ?>">
-                                <?php echo "<span class='error'>$errorEmri<span>";?>
+                                <?php echo "<span class='error'>$errorEmri</span>";?>
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row px-3">
@@ -86,7 +86,7 @@ if(!isset($_SESSION['email'])) {
                                     <h6 class="mb-0 text-sm"> Surname </h6>
                                 </label>
                                 <input class="mb-4" type="text" name="mbiemri" placeholder="Enter your surname" value="<?php echo $mbiemri; ?>">
-                                <?php echo "<span class='error'>$errorMbiemri<span>";?>
+                                <?php echo "<span class='error'>$errorMbiemri</span>";?>
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row px-3">
@@ -94,15 +94,13 @@ if(!isset($_SESSION['email'])) {
                                     <h6 class="mb-0 text-sm"> Nickname </h6>
                                 </label>
                                 <input class="mb-4" type="text" name="nickname" placeholder="Enter your nickname" value="<?php echo $nickname; ?>">
-                                <?php echo "<span class='error'>$errorNickname<span>";?>
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row px-3">
                                 <label class="mb-1">
                                     <h6 class="mb-0 text-sm"> Profile Picture </h6>
                                 </label>
-                                <input class="mb-4" type="text" name="foto" placeholder="Upload your profile pic" value="<?php echo $foto; ?>">
-                                <?php echo "<span class='error'>$errorFoto<span>";?>
+                                <input class="form-control bg-dark" type="file" name="foto" value="<?php echo $foto; ?>">
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row px-3">
@@ -110,7 +108,7 @@ if(!isset($_SESSION['email'])) {
                                     <h6 class="mb-0 text-sm">Email Address</h6>
                                 </label>
                                 <input class="mb-4" type="email" name="email" placeholder="Enter a valid email address" value="<?php echo $email; ?>">
-                                <?php echo "<span class='error'>$errorEmail<span>";?>
+                                <?php echo "<span class='error'>$errorEmail</span>";?>
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row px-3">
@@ -118,8 +116,8 @@ if(!isset($_SESSION['email'])) {
                                     <h6 class="mb-0 text-sm">Password</h6>
                                 </label>
                                 <input type="password" name="password" placeholder="Enter password" value="<?php echo $pass; ?>">
-                                <?php echo "<span class='error'>$errorPassword<span>";?>
-                                <?php echo "<span class='error'>$errorPassTooltip<span>";?>
+                                <?php echo "<span class='error'>$errorPassword</span>";?>
+                                <?php echo "<span class='error'>$errorPassTooltip</span>";?>
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row px-3">
@@ -127,9 +125,9 @@ if(!isset($_SESSION['email'])) {
                                     <h6 class="mb-0 text-sm"> Confirm Password</h6>
                                 </label>
                                 <input type="password" name="confirmpass" placeholder="Enter password again" value="<?php echo $confirmpass; ?>">
-                                <?php echo "<span class='error'>$errorConfirmPass<span>";?>
+                                <?php echo "<span class='error'>$errorConfirmPass</span>";?>
                                 <input type="hidden" name="data_regj"/ value ="<?php echo $data; ?>">
-                                <?php echo "<span class='error'>$errorGen<span>";?>
+                                <?php echo "<span class='error'>$errorGen</span>";?>
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row mb-3 px-3">
@@ -137,7 +135,7 @@ if(!isset($_SESSION['email'])) {
                             </div>
                             <div class="nk-gap-1"></div>
                             <div class="row mb-4 px-3">
-                                <p class="font-weight-bold"> You already have an account?
+                                <p class="font-weight-bold"> Already have an account?
                                     <a class="text-danger" href="login.php">Log In</a>
                                 </p>
                             </div>
@@ -160,9 +158,6 @@ if(!isset($_SESSION['email'])) {
             </div>
         </div>
     </div>
-
-    <div class="nk-gap-4"></div>
-    <?php include"src/components/footer.php"; ?>
 
 <!-- START: Page Background -->
     <img class="nk-page-background-top" src="src/assets/images/bg-top.png" alt="">

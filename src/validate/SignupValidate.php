@@ -29,7 +29,6 @@ if(empty($emri) && empty($mbiemri) && empty($nickname) && empty($email) && empty
 
 //nese te pakten njera nga fushat permban nje vlere perkatese, na nevojitet ta validojme ate vlere
 else {
-    //nese fusha e emrit eshte e zbrazet
     if(empty($emri)) {
         $errorEmri = "Name field is required!";
         $register = false;
@@ -43,6 +42,7 @@ else {
             $register = false;
         }
     }
+
     //nese fusha e mbiemrit eshte e zbrazet
     if(empty($mbiemri)) {
         $errorMbiemri = "Surname field is required!";
@@ -102,8 +102,8 @@ else {
 
         //ne rastin tone do te bejme nje insertim
         $querysql = "INSERT INTO perdoruesi
-			(id,roli_id,email,emri,mbiemri,nickname,password,confirmpass,foto,data_regj)
-			VALUES (NULL,2,'$email','$emri','$mbiemri','$nickname','$pass','$confirmpass','src/assets/images/$foto','$data');";
+			(id,roli_id,email,emri,mbiemri,nickname,password,foto,data_regj)
+			VALUES (NULL,2,'$email','$emri','$mbiemri','$nickname','$pass','src/assets/images/$foto','$data');";
 
         //funksioni ne vazhdim perdoret per te ekzekutuar deklarata te shumta te sql query ne mysql
         if (mysqli_multi_query($connect, $querysql)) {
@@ -116,4 +116,3 @@ else {
         }
     }
 }
-?>
