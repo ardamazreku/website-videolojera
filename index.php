@@ -285,11 +285,11 @@ session_start();
                 ?>
                 <div class="col-md-6">
                     <div class="nk-product-cat">
-                        <a class="nk-product-image" href="store.php" target="_blank">
+                        <a class="nk-product-image" href="store.php">
                             <img src="<?= $row['foto']?>" alt="">
                         </a>
                         <div class="nk-product-cont">
-                            <h3 class="nk-product-title h5"><a href="store.php" target="_blank"><?= $row['emri']?></a></h3>
+                            <h3 class="nk-product-title h5"><a href="store.php"><?= $row['emri']?></a></h3>
                             <div class="nk-gap-1"></div>
                             <div class="nk-product-rating" data-rating="3">
                                 <i class="fa fa-star"></i>
