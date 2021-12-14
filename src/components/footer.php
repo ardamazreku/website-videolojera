@@ -72,10 +72,10 @@
             </div>
             <div class="nk-copyright-right">
                 <ul class="nk-social-links-2">
-                    <li><a class="nk-social-github" href="www.github.com/ardamazreku"><span class="fab fa-github"></span></a></li>
-                    <li><a class="nk-social-steam" href="https://steamcommunity.com/id/ardellem/"><span class="fab fa-steam"></span></a></li>
-                    <li><a class="nk-social-facebook" href="www.facebook.com/ardamazreku"><span class="fab fa-facebook"></span></a></li>
-                    <li><a class="nk-social-twitter" href="www.twitter.com" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                    <li><a class="nk-social-github" href="https://www.github.com/ardamazreku" target="_blank"><span class="fab fa-github"></span></a></li>
+                    <li><a class="nk-social-steam" href="https://steamcommunity.com/id/ardellem/" target="_blank"><span class="fab fa-steam"></span></a></li>
+                    <li><a class="nk-social-facebook" href="https://www.facebook.com/ardamazreku" target="_blank"><span class="fab fa-facebook"></span></a></li>
+                    <li><a class="nk-social-twitter" href="https://www.twitter.com" target="_blank" target="_blank"><span class="fab fa-twitter"></span></a></li>
                 </ul>
             </div>
         </div>
