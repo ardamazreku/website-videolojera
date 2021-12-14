@@ -53,7 +53,7 @@ if(isset($_SESSION['email'])) {
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label class="col-sm-2 col-lg-2 form-label" for="password">Your name<span style="color:red">*</span></label>
+                                    <label class="col-sm-2 col-lg-2 form-label" for="password">Your name</label>
                                     <div class="col-sm-10 col-lg-5">
                                         <input type="text" name="emri" value ="<?= $row['emri'] ?>"
                                         placeholder="<?= $row['emri'] ?>" class="form-control">
@@ -66,7 +66,7 @@ if(isset($_SESSION['email'])) {
                                 <div><br/></div>
                                 <h5 class="card-title"> Reset your password </h5>
                                 <div class="mb-3 row">
-                                    <label class="col-sm-2 form-label" for="email">Current Password<span style="color:red">*</span></label>
+                                    <label class="col-sm-2 form-label" for="email">Current Password<span style="color:red"> *</span></label>
                                     <div class="col-sm-10">
                                         <input type="password" name="currentPassword" placeholder="Current Password" value="<?php echo $pass;?>" class="form-control">
                                         <small class="form-text"> Type your current password. </small>
@@ -75,7 +75,7 @@ if(isset($_SESSION['email'])) {
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label class="col-sm-2 form-label" for="password">New Password<span style="color:red">*</span></label>
+                                    <label class="col-sm-2 form-label" for="password">New Password<span style="color:red"> *</span></label>
                                     <div class="col-sm-10">
                                         <input type="password" name="newPassword" placeholder="New Password" value="<?php echo $newPass;?>" class="form-control">
                                         <small class="form-text"> Type your new password. </small>

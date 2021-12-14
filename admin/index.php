@@ -41,13 +41,13 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                     <div class="col-lg-1">
                                         <p> ID </p>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-4">
                                         <p> Email </p>
                                     </div>
                                     <div class="col-lg-3">
                                         <p> Name </p>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <p> Message </p>
                                     </div>
                                 </div>
@@ -67,13 +67,13 @@ if(isset($_SESSION['email']) && isset($_SESSION['roli_id'])) {
                                     <div class="col-lg-1">
                                         <p> <?= $row['id'] ?> </p>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-4">
                                         <p> <?= $row['email'] ?> </p>
                                     </div>
                                     <div class="col-lg-3">
                                         <p> <?= $row['emri'] ?> </p>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <p> <?= $row['mesazhi'] ?> </p>
                                     </div>
                                     <?php endwhile; ?>

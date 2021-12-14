@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Dec 11, 2021 at 04:17 PM
+-- Generation Time: Dec 14, 2021 at 01:54 PM
 -- Server version: 10.5.4-MariaDB
 -- PHP Version: 7.3.21
 
@@ -160,7 +160,14 @@ CREATE TABLE IF NOT EXISTS `kontakt` (
   `emri` varchar(30) NOT NULL,
   `mesazhi` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kontakt`
+--
+
+INSERT INTO `kontakt` (`id`, `email`, `emri`, `mesazhi`) VALUES
+(1, 'user123@gmail.com', 'SkyLerR12', 'Hey! I need help with some purchasing, could you write an email back to me, please? :) ');
 
 -- --------------------------------------------------------
 
