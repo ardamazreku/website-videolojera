@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['email'])) {
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,13 +58,4 @@ if(!isset($_SESSION['email'])) {
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
 </html>
-<?php
-}
-
-else {
-    //nese perdoruesi eshte i kyqur, atehere ridrejtoje ne faqen baze pas kyqjes
-    header("Location: index.php");
-}
-?>

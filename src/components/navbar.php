@@ -56,7 +56,7 @@
                                     <a href="store.php"> Store </a>
                                 </li>
                                 <li>
-                                    <a href="admin/login.php" target="_blank"> Admin Panel </a>
+                                    <a href="admin/index.php" target="_blank"> Admin Panel </a>
                                 </li>';
                         }
                     }
