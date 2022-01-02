@@ -1,0 +1,15 @@
+{
+  "name": "website-videolojera",
+  "description": "Webapp for my diploma thesis",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": "~7.3.0||~7.4.0"
+  },
+  "autoload": {
+    "files": [ "index.php" ]
+  }
+}
