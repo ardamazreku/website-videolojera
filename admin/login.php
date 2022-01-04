@@ -50,7 +50,7 @@ session_start();
                         <button class="btn btn-primary shadow-2 mb-4" type="submit">Login</button>
                     </form>
                     <p class="mb-2 text-muted">Forgot password? <a href="forgot-password.php">Reset</a></p>
-                    <p class="mb-0 text-muted">Don't have account yet? <a href="signup.php">Signup</a></p>
+                    <p class="mb-0 text-muted">Don't have account yet? <a href="signup.php">Sign Up</a></p>
                 </div>
             </div>
         </div>
